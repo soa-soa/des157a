@@ -61,11 +61,15 @@ nav ul li {
     /* padding: 1.5em; */
 }
 
+/* .container li:first-child {
+    margin-top: 3em;
+} */
+
 .centered {
     position: relative;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, 25%); 
 }
 
 /** rules will apply if browser is wider than 600px **/
