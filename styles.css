@@ -1,0 +1,79 @@
+h1, h2, h3, p, ul, ol {
+    /* removes default margin/padding from these elements*/
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    /* sets images as block elements and makes sure they don't bust out of their containers, and that they maintain their aspect ratio. */
+    display: block;
+    max-width: 100%;
+    height: auto;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+nav ul, nav ol {
+    /* removes bulletpoints */
+    list-style-type: none;
+}
+
+body {
+    background-color: #B2E3E0;
+    font-family: 'VT323';
+}
+
+header h1 { 
+    font-size: 4em;
+    padding: 0.5em;
+}
+
+header h2 {
+    font-size: 1em;
+    padding: 0.5em;
+
+}
+
+h2 {
+    font-size: 2.5em;
+}
+
+nav ul li {
+    font-size: 1.5em;
+    /* padding-top: 0.25em;
+    padding-bottom: 0.25em; */
+    padding: 0.25em;
+
+}
+
+.container {
+    /* contains both nav and image */
+    position: relative;
+    text-align: center;
+    color: black;
+
+    padding-top: 1.5em;
+    padding-bottom: 10em;
+    /* padding: 1.5em; */
+}
+
+.centered {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/** rules will apply if browser is wider than 600px **/
+/* bigger than phone */
+@media screen and (min-width: 600px) {
+
+body {
+    background-color: teal;
+}
+
+}
