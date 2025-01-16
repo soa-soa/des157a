@@ -25,6 +25,9 @@ nav ul, nav ol {
 body {
     background-color: #B2E3E0;
     font-family: 'VT323';
+    /* background-image: url("bubble1.svg");
+    background-repeat: repeat-y; */
+    /* background-color: blueviolet; */
 }
 
 header h1 { 
@@ -73,11 +76,27 @@ nav ul li {
 }
 
 /** rules will apply if browser is wider than 600px **/
-/* bigger than phone */
+/* bigger than phone, for laptop */
 @media screen and (min-width: 600px) {
 
 body {
     background-color: teal;
 }
+
+.wrapper {
+    /* display: flex; */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+
+}
+
+.container {
+    /* width: calc(50% - 10px); */
+}
+
+/* nav {
+    width: 25%;
+} */
 
 }
