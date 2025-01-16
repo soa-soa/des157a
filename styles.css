@@ -92,6 +92,40 @@ nav ul li a{
     width: 100%;
 }
 
+/* hover animation */
+.animationParent {
+    /* background-color: #0e1e61; */
+    height: 140px;
+    width: 140px;
+    transition: all 0.1s ease-in-out;
+}
+
+.animationChild {
+    /* background-color: red; */
+    height: 150%;
+    width: 150%;
+    transition: transform 1s;
+    transform: translate(400px, 40px);
+}
+
+.animationParent:hover .animationChild {
+    transform: scale(1.5);
+}
+
+/* continuous animation */
+.automaticAnimation {
+    position: relative;
+    left: 80%;
+    width: auto;
+    height: auto;
+    animation: water 3s ease-in infinite;
+}
+
+@keyframes water {
+    from {top: -150px;}
+    to {top: 1200px;}
+}
+
 /* middle resolution */
 /* 2 x 2 layout */
 @media screen and (min-width: 600px) {
@@ -106,11 +140,10 @@ nav ul li a{
     /* 12 columns with the width of 1 fractional unit of the website */
     grid-template-columns: repeat(8, 1fr); 
     /* height of the rows */
-    grid-auto-rows: repeat(8, 1fr);
+    grid-auto-rows: 75px;
     gap: 20px;
     justify-content: space-around;
 }
-    
 
 .research {
     grid-column: span 4;
