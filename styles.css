@@ -50,12 +50,13 @@ nav ul li {
 
 }
 
-.container {
+.research, .madLibs, .everyPicture, .gameOn {
     /* contains both nav and image */
     position: relative;
     text-align: center;
     color: black;
 
+    /* margin: 5em; */
     padding-top: 3.5em;
     padding-bottom: 10em;
     /* padding: 1.5em; */
@@ -72,12 +73,91 @@ nav ul li {
     transform: translate(-50%, 25%); 
 }
 
-/** rules will apply if browser is wider than 600px **/
-/* bigger than phone */
+/* middle resolution */
+/* 2 x 2 layout */
 @media screen and (min-width: 600px) {
 
 body {
+    background-color: rgb(56, 190, 190);
+}
+
+
+.parent {
+    display: grid;
+    /* 12 columns with the width of 1 fractional unit of the website */
+    grid-template-columns: repeat(8, 1fr); 
+    /* height of the rows */
+    grid-auto-rows: repeat(8, 1fr);
+    gap: 20px;
+    justify-content: space-around;
+}
+    
+
+.research {
+grid-column: span 4;
+grid-row: span 4;
+padding-top: 0;
+padding-bottom: 15em;
+}
+
+.madLibs {
+grid-column: span 4;
+grid-row: span 4;
+padding-top: 0;
+padding-bottom: 15em;
+}
+
+.everyPicture {
+grid-column: span 4;
+grid-row: span 4;
+padding-top: 0;
+padding-bottom: 15em;
+}
+
+.gameOn {
+grid-column: span 4;
+grid-row: span 4;
+padding-top: 0;
+padding-bottom: 15em;
+}
+
+}
+
+/** rules will apply if browser is wider than 600px **/
+/* bigger than phone */
+/* 4 x 1 layout */
+@media screen and (min-width: 1000px) {
+
+body {
     background-color: teal;
+}
+
+.research {
+    grid-column: span 2;
+    grid-row: span 2;
+    padding-top: 0;
+    padding-bottom: 15em;
+}
+
+.madLibs {
+    grid-column: span 2;
+    grid-row: span 2;
+    padding-top: 0;
+    padding-bottom: 15em;
+}
+
+.everyPicture {
+    grid-column: span 2;
+    grid-row: span 2;
+    padding-top: 0;
+    padding-bottom: 15em;
+}
+
+.gameOn {
+    grid-column: span 2;
+    grid-row: span 2;
+    padding-top: 0;
+    padding-bottom: 15em;
 }
 
 }
