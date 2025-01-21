@@ -1,0 +1,98 @@
+h1, h2, h3, p, ul, ol {
+    /* removes default margin/padding from these elements*/
+    margin: 0;
+    padding: 0;
+}
+
+nav ul, nav ol {
+    /* removes bulletpoints */
+    list-style-type: none;
+}
+
+
+body {
+    max-width: 66%;
+    font-family: 'poppins';
+}
+
+/* continuous animation */
+.automaticAnimation1 {
+    position: fixed;
+    left: 80%;
+    width: auto;
+    height: auto;
+    animation: water1 1s ease-in infinite;
+}
+
+.automaticAnimation2 {
+    position: fixed;
+    left: 85%;
+    width: auto;
+    height: auto;
+    animation: water2 7s ease-in infinite;
+}
+
+.automaticAnimation3 {
+    position: fixed;
+    left: 70%;
+    width: auto;
+    height: auto;
+    animation: water3 5s ease-in infinite;
+}
+
+.automaticAnimation4 {
+    position: fixed;
+    left: 90%;
+    width: auto;
+    height: auto;
+    animation: water4 2s ease-in infinite;
+}
+
+.automaticAnimation5 {
+    position: fixed;
+    left: 75%;
+    width: auto;
+    height: auto;
+    animation: water5 3s ease-in infinite;
+}
+
+@keyframes water1 {
+    from {top: -150px;}
+    to {top: 1200px;}
+}
+
+@keyframes water2 {
+    from {top: -600px;}
+    to {top: 1200px;}
+}
+
+@keyframes water3 {
+    from {top: -500px;}
+    to {top: 1200px;}
+}
+
+@keyframes water4 {
+    from {top: -200px;}
+    to {top: 1200px;}
+}
+
+@keyframes water5 {
+    from {top: -70px;}
+    to {top: 1200px;}
+}
+
+
+article {
+    padding: 2em;
+    margin: auto;
+    line-height: 1.5em;
+}
+
+h1 {
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+p {
+    padding-top: 1em;
+}
