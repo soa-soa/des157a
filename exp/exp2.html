@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment 2</title>
+</head>
+<body>
+    <h1>Experiment 2</h1>
+    <h2>To see the functionality of the code: Right click to "Inspect", then on the "Console" tab that's located next to "Elements"!</h2>
+    
+    <script>
+        //Prompt the user for a color that the computer is "thinking of" - either red, yellow, green, or blue. Then pick a random color from an array. If the color entered by the user matches the color picked by the program, it displays the output message "You are right!". Otherwise, it displays "Try again!". (Credit: Krithika Govind)
+        
+        var userColor = prompt('What color am I thinking of?')
+        var color = ['red', 'yellow', 'green', 'blue'] //element 0, 1, 2, 3
+
+        function randomInt(min, max) {
+            var numOfValues = max - min + 1;
+            var randomNum = Math.random();
+            var randomVal = randomNum * numOfValues;
+            //Math.ceiling rounds up, Math.floor rounds down
+            var roundedRandomVal = Math.floor(randomVal);
+            var finalNum = roundedRandomVal + min; //gets a random number between the min and max value
+
+            // console.log(finalNum);
+            return finalNum;
+        }
+
+        var chosenColor = (color[randomInt(0,3)]);
+        // console.log(chosenColor);
+
+        if (chosenColor == userColor) {
+            console.log(`You guessed correctly!`);
+            } else {
+                console.log(`I was actually thinking of ${chosenColor}. Try again!`);
+            }
+
+    </script>
+    
+</body>
+</html>
