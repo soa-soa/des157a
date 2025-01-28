@@ -1,0 +1,8 @@
+input, label {
+    /* inline elements by default */
+    display: block;
+}
+
+input {
+    margin-bottom: 1em;
+}
