@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mad Libs</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <script src="script.js" defer></script>
+
+</head>
+<body>
+    <h1>Mad Libs</h1>
+
+    <form class="parent" method="post">
+        <div class="column">
+            <div class="object">
+                <label for="object1">Name 2 Objects</label>
+                <input type="text" name="object1" id="object1" placeholder="beachball" required>
+                <input type="text" name="object2" id="object2" placeholder="stick" required>
+            </div>
+
+            <div class="location">
+                <label for="location">Name 1 Location</label>
+                <input type="text" name="location" id="location" placeholder="sewers" required>
+            </div>
+
+            <div class="color">
+                <label for="color">Name 2 Colors</label>
+                <input type="text" name="color1" id="color1" placeholder="purple">
+                <input type="text" name="color2" id="color2" placeholder="green">
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="number">
+                <label for="number">Name 1 Number</label>
+                <input type="text" name="number" id="number" placeholder="8">
+            </div>
+
+            <div class="pastTenseVarbs">
+                <label for="past tense">Name 4 Past Tense Verbs</label>
+                <input type="text" name="number1" id="number1" placeholder="looked">
+                <input type="text" name="number2" id="number2" placeholder="swooped">
+                <input type="text" name="number3" id="number3" placeholder="slapped">
+                <input type="text" name="number4" id="number4" placeholder="rolled">
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="bodyPart">
+                <label for="bpdy part">Name 1 Body Part</label>
+                <input type="text" name="bodyPart" id="bodyPart" placeholder="eye">
+            </div>
+
+            <div class="animal"></div>
+                <label for="animal">Name 2 Animals</label>
+                <input type="text" name="animal1" id="animal1" placeholder="frog">
+                <input type="text" name="animal2" id="animal2" placeholder="turtle">
+            </div>
+
+            <div class="food">
+                <label for="food">Name 1 Food</label>
+                <input type="text" name="food" id="food" placeholder="pizza">
+            </div>
+        </div>
+
+
+        <input type="submit" name="submit" id="sendForm" value="Find out what's my story!">
+
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+h1, h2, h3, p, ul, ol {
+    /* removes default margin/padding from these elements*/
+    margin: 0;
+    padding: 0;
+}
+
+nav img {
+    /* sets images as block elements and makes sure they don't bust out of their containers, and that they maintain their aspect ratio. */
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+body {
+    background-color: #F7F5FF;
+    font-family: 'Playpen Sans';
+    padding: 2em;
+    
+}
+
+label, input {
+    /* inline elements by default */
+    display: block;
+    padding-top: 1em;
+    padding-bottom: 0.25em;
+    margin-left: 1em;
+}
+
+label {
+    font-size: 1.5em;
+}
+
+input {
+    margin-bottom: 0.75em;
+    background-color: #FFD6D6;
+    border-radius: 0.5em;
+    padding: 0.5em;
+
+}
+
+/* submit button */
+#sendForm {
+    background-color: aqua;
+    font-weight: 800;
+}
+
+.parent {
+    display: grid;
+    /* 3 columns with the width of 1 fractional unit of the website */
+    grid-template-columns: repeat(3, 1fr); 
+    /* gap: 20px; */
+    /* justify-content: space-around; */
+}
+
+.object {
+    grid-column: 1;
+    
+}
