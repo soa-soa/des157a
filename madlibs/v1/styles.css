@@ -49,7 +49,7 @@ input {
 .screen {
     background-color: white;
     padding: 1em;
-    border-radius: 10px;
+    border-radius: 2em;
     border: 1em solid #FFD6D6;
 }
 
@@ -62,6 +62,25 @@ input {
 .object, .color, .bodyPart {
     grid-column: 1;
     
+}
+
+.posterTriangle {
+    position: absolute;
+    bottom: 90%;
+    left: 5%;
+    z-index: -1;
+}
+
+.posterStar {
+    position: absolute;
+    bottom: 70%;
+    left: 92%;
+}
+
+.posterCircle {
+    position: absolute;
+    bottom: 40%;
+    left: -5%;
 }
 
 .sideswipe {
@@ -175,9 +194,9 @@ input {
 .rodimusShadow {
     position: absolute;
     height: 25px;
-    width: 200px;
-    bottom: 8%;
-    left: 77%;
+    width: 175px;
+    bottom: 7%;
+    left: 76%;
     background-color: #6A75D2;
     border-radius: 50%;
     opacity: 0.5;
@@ -251,19 +270,107 @@ input {
     opacity: 0.5;
 }
 
+.monitorStand {
+    position: absolute;
+    height: 20%;
+    width: 10%;
+    bottom: 9%;
+    left: 45%;
+    background-color: #FBCCCC;
+    z-index: -1;
+}
+
+.monitorStandShadow {
+    position: absolute;
+    height: 10%;
+    width: 10%;
+    bottom: 20%;
+    left: 45%;
+    background-color: #e3adad;
+    z-index: -1;
+    opacity: 0.5;
+
+}
+
+.monitorShadow {
+    position: absolute;
+    height: 5%;
+    width: 70%;
+    bottom: 9%;
+    left: 15%;
+    background-color: #6A75D2;
+    border-radius: 20%;
+    opacity: 0.5;
+}
+
 .star1 {
     position: absolute;
     bottom: 1%;
     left: 5%;
+}
+
+.star2 {
+    position: absolute;
+    bottom: 10%;
+    left: 15%;
+}
+
+.star3 {
+    position: absolute;
+    bottom: 1%;
+    left: 25%;
+}
+
+.star4 {
+    position: absolute;
+    bottom: 10%;
+    left: 35%;
+}
+
+.star5 {
+    position: absolute;
+    bottom: 1%;
+    left: 45%;
+}
+
+.star6 {
+    position: absolute;
+    bottom: 10%;
+    left: 55%;
+}
+
+.star7 {
+    position: absolute;
+    bottom: 1%;
+    left: 65%;
+}
+
+.star8 {
+    position: absolute;
+    bottom: 10%;
+    left: 75%;
 
 }
 
+.star9 {
+    position: absolute;
+    bottom: 1%;
+    left: 85%;
+}
+
+.star10 {
+    position: absolute;
+    bottom: 10%;
+    left: 95%;
+}
+
+
 .desk {
     position: absolute;
-    height: 150px;
-    width: 1250px;
-    bottom: -20px;
-    left: -20px;
+    height: 25%;
+    width: 120%;
+    bottom: -10%;
+    left: 0%;
     background-color: #BEB6DE;
 
 }
