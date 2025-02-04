@@ -14,7 +14,9 @@ nav img {
 body {
     background-color: #F7F5FF;
     font-family: 'Playpen Sans';
-    padding: 2em;
+    padding-top: 3em;
+    padding-left: 10em;
+    padding-right: 10em;
     
 }
 
@@ -27,7 +29,7 @@ label, input {
 }
 
 label {
-    font-size: 1.5em;
+    font-size: 1em;
 }
 
 input {
@@ -44,15 +46,224 @@ input {
     font-weight: 800;
 }
 
+.screen {
+    background-color: white;
+    padding: 1em;
+    border-radius: 10px;
+    border: 1em solid #FFD6D6;
+}
+
 .parent {
     display: grid;
     /* 3 columns with the width of 1 fractional unit of the website */
     grid-template-columns: repeat(3, 1fr); 
-    /* gap: 20px; */
-    /* justify-content: space-around; */
 }
 
-.object {
+.object, .color, .bodyPart {
     grid-column: 1;
     
+}
+
+.sideswipe {
+    position: absolute;
+    bottom: -2%;
+    left: -1%;
+}
+
+.sideswipeShadow {
+    position: absolute;
+    height: 25px;
+    width: 175px;
+    bottom: -3%;
+    left: -1%;
+    background-color: #6A75D2;
+    border-radius: 50%;
+    opacity: 0.5;
+}
+
+.soundwaveBumblebee {
+    position: absolute;
+    bottom: 15%;
+    left: 0%;
+}
+
+.soundwaveBumblebeeShadow {
+    position: absolute;
+    height: 25px;
+    width: 200px;
+    bottom: 15%;
+    left: 0%;
+    background-color: #6A75D2;
+    border-radius: 50%;
+    opacity: 0.5;
+}
+
+.ratchet {
+    position: absolute;
+    bottom: 4%;
+    left: 5%;
+}
+
+.ratchetShadow {
+    position: absolute;
+    height: 25px;
+    width: 200px;
+    bottom: 3%;
+    left: 5%;
+    background-color: #6A75D2;
+    border-radius: 50%;
+    opacity: 0.5;
+}
+
+.soundwaveBlokees {
+    position: absolute;
+    bottom: 10%;
+    left: 25%;
+}
+
+.soundwaveBlokeesShadow {
+    position: absolute;
+    height: 25px;
+    width: 200px;
+    bottom: 10%;
+    left: 25%;
+    background-color: #6A75D2;
+    border-radius: 50%;
+    opacity: 0.5;
+}
+
+.laserbeakOnRavageLeft {
+    position: absolute;
+    bottom: 8%;
+    left: 20%;
+}
+
+.laserbeakOnRavageShadow {
+    position: absolute;
+    height: 25px;
+    width: 200px;
+    bottom: 8%;
+    left: 20%;
+    background-color: #6A75D2;
+    border-radius: 50%;
+    opacity: 0.5;
+}
+
+.orionPax {
+    position: absolute;
+    bottom: 10%;
+    left: 65%;
+}
+
+.orionPaxShadow {
+    position: absolute;
+    height: 25px;
+    width: 200px;
+    bottom: 10%;
+    left: 65%;
+    background-color: #6A75D2;
+    border-radius: 50%;
+    opacity: 0.5;
+}
+
+.rodimus {
+    position: absolute;
+    bottom: 8%;
+    left: 77%;
+}
+
+.rodimusShadow {
+    position: absolute;
+    height: 25px;
+    width: 200px;
+    bottom: 8%;
+    left: 77%;
+    background-color: #6A75D2;
+    border-radius: 50%;
+    opacity: 0.5;
+}
+
+.senatorShockwave {
+    position: absolute;
+    bottom: 12%;
+    left: 84%;
+}
+
+.senatorShockwaveShadow {
+    position: absolute;
+    height: 25px;
+    width: 180px;
+    bottom: 11%;
+    left: 85%;
+    background-color: #6A75D2;
+    border-radius: 50%;
+    opacity: 0.5;
+}
+
+.soundwaveKingdom {
+    position: absolute;
+    bottom: 4%;
+    left: 85%;
+}
+
+.soundwaveKingdomShadow {
+    position: absolute;
+    height: 25px;
+    width: 100px;
+    bottom: 3%;
+    left: 85%;
+    background-color: #6A75D2;
+    border-radius: 50%;
+    opacity: 0.5;
+}
+
+.buzzsaw {
+    position: absolute;
+    bottom: 2%;
+    left: 75%;
+}
+
+.buzzsawShadow {
+    position: absolute;
+    height: 25px;
+    width: 100px;
+    bottom: 2%;
+    left: 75%;
+    background-color: #6A75D2;
+    border-radius: 50%;
+    opacity: 0.5;
+}
+
+.keyboard {
+    position: absolute;
+    bottom: 0%;
+    left: 25%;
+}
+
+.keyboardShadow {
+    position: absolute;
+    height: 50px;
+    width: 600px;
+    bottom: -5%;
+    left: 24%;
+    background-color: #6A75D2;
+    /* border-radius: 50%; */
+    opacity: 0.5;
+}
+
+.star1 {
+    position: absolute;
+    bottom: 1%;
+    left: 5%;
+
+}
+
+.desk {
+    position: absolute;
+    height: 150px;
+    width: 1250px;
+    bottom: -20px;
+    left: -20px;
+    background-color: #BEB6DE;
+
 }
