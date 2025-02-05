@@ -41,9 +41,13 @@ input {
 }
 
 /* submit button */
-#sendForm {
+#submit {
     background-color: #ffc1c1;
     font-weight: 800;
+}
+
+#submit:hover {
+    background-color: aqua;
 }
 
 .screen {
@@ -53,6 +57,7 @@ input {
     border: 1em solid #FFD6D6;
 }
 
+/* entire form */
 .parent {
     display: grid;
     /* 3 columns with the width of 1 fractional unit of the website */

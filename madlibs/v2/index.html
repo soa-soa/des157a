@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mad Libs</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <script src="script.js" defer></script>
+
+</head>
+<body>
+    <img class="posterTriangle" src="images/posterTriangle.png" alt="star" width="173" height="253">
+    <img class="posterStar" src="images/posterStar.png" alt="star" width="173" height="253">
+    <img class="posterCircle" src="images/posterCircle.png" alt="star" width="173" height="254">
+
+    <div class="monitorStand"></div>
+    <div class="monitorStandShadow"></div>
+
+
+    <main class="screen">
+        <div class="desk"></div>
+
+        <h1>Mad Libs</h1>
+
+        <img class="star1" src="images/star.png" alt="star" width="130" height="37">
+        <img class="star2" src="images/star.png" alt="star" width="130" height="37">
+        <img class="star3" src="images/star.png" alt="star" width="130" height="37">
+        <img class="star4" src="images/star.png" alt="star" width="130" height="37">
+        <img class="star5" src="images/star.png" alt="star" width="130" height="37">
+        <img class="star6" src="images/star.png" alt="star" width="130" height="37">
+        <img class="star7" src="images/star.png" alt="star" width="130" height="37">
+        <img class="star8" src="images/star.png" alt="star" width="130" height="37">
+        <img class="star9" src="images/star.png" alt="star" width="130" height="37">
+        <img class="star10" src="images/star.png" alt="star" width="130" height="37">
+
+        <div class="monitorShadow"></div>
+
+        <div class="soundwaveBumblebeeShadow"></div>
+        <img class="soundwaveBumblebee" src="images/soundwaveBumblebee.png" alt="Soundwave Toy from Bumblebee Movie">
+
+        <div class="ratchetShadow"></div>
+        <img class="ratchet" src="images/ratchet.png" alt="Ratchet Toy, Gamers Edition">
+
+        <div class="soundwaveBlokeesShadow"></div>
+        <img class="soundwaveBlokees" src="images/soundwaveBlokees.png" alt="Soundwave Toy, Blokees">
+
+        <div class="laserbeakOnRavageLeftShadow"></div>
+        <img class="laserbeakOnRavageLeft" src="images/laserbeakOnRavageLeft.png" alt="Laserbeak toy on Ravage">
+
+        <div class="orionPaxShadow"></div>
+        <img class="orionPax" src="images/orionPax.png" alt="Orion Pax Toy">
+
+        <div class="senatorShockwaveShadow"></div>
+        <img class="senatorShockwave" src="images/senatorShockwave.png" alt="Senator Shockwave">
+
+        <div class="rodimusShadow"></div>
+        <img class="rodimus" src="images/rodimus.png" alt="Rodimus Toy">
+
+        <div class="soundwaveKingdomShadow"></div>
+        <img class="soundwaveKingdom" src="images/soundwaveKingdom.png" alt="Soundwave Toy, Kingdom Class">
+
+        <div class="buzzsawShadow"></div>
+        <img class="buzzsaw" src="images/buzzsaw.png" alt="buzzsaw">
+
+        <div class="sideswipeShadow"></div>
+        <img class="sideswipe" src="images/sideswipe.png" alt="Sideswipe Toy, Gamers Edition">
+
+        <!-- <div class="keyboardShadow"></div> -->
+        <img class="keyboard" src="images/keyboard.png" alt="White Mechanical Keyboard">
+
+
+        <form class="parent" method="post">
+            <section class="column">
+                <div class="object">
+                    <label for="object1">Name 2 Objects</label>
+                    <input type="text" name="object1" id="object1" placeholder="beachball">
+                    <input type="text" name="object2" id="object2" placeholder="stick">
+                </div>
+
+                <div class="location">
+                    <label for="location">Name 1 Location</label>
+                    <input type="text" name="location" id="location" placeholder="sewers">
+                </div>
+
+                <div class="color">
+                    <label for="color">Name 2 Colors</label>
+                    <input type="text" name="color1" id="color1" placeholder="purple">
+                    <input type="text" name="color2" id="color2" placeholder="green">
+                </div>
+            </section>
+
+            <section class="column">
+                <div class="number">
+                    <label for="number">Name 1 Number</label>
+                    <input type="text" name="number" id="number" placeholder="8">
+                </div>
+
+                <div class="pastTenseVarbs">
+                    <label for="past tense">Name 4 Past Tense Verbs</label>
+                    <input type="text" name="pastTense1" id="pastTense1" placeholder="looked">
+                    <input type="text" name="pastTense2" id="pastTense2" placeholder="swooped">
+                    <input type="text" name="pastTense3" id="pastTense3" placeholder="slapped">
+                    <input type="text" name="pastTense4" id="pastTense4" placeholder="rolled">
+                </div>
+            </section>
+
+            <section class="column">
+                <div class="bodyPart">
+                    <label for="body part">Name 1 Body Part</label>
+                    <input type="text" name="bodyPart" id="bodyPart" placeholder="eye">
+                </div>
+
+                <div class="animal">
+                    <label for="animal">Name 2 Animals</label>
+                    <input type="text" name="animal1" id="animal1" placeholder="frog">
+                    <input type="text" name="animal2" id="animal2" placeholder="turtle">
+                </div>
+
+                <div class="food">
+                    <label for="food">Name 1 Food</label>
+                    <input type="text" name="food" id="food" placeholder="pizza">
+                </div>
+            </section>
+
+
+            <input type="submit"  id="submit" value="Find out what's my story!">
+        </form>
+
+        <article id="madlib"></article>
+
+    </main>
+
+</body>
+</html>
