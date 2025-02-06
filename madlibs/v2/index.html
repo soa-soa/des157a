@@ -25,8 +25,6 @@
     <main class="screen">
         <div class="desk"></div>
 
-        <h1>Mad Libs</h1>
-
         <img class="star1" src="images/star.png" alt="star" width="130" height="37">
         <img class="star2" src="images/star.png" alt="star" width="130" height="37">
         <img class="star3" src="images/star.png" alt="star" width="130" height="37">
@@ -73,8 +71,9 @@
         <!-- <div class="keyboardShadow"></div> -->
         <img class="keyboard" src="images/keyboard.png" alt="White Mechanical Keyboard">
 
+        <h1>Mad Libs</h1>
 
-        <form class="parent" method="post">
+        <form id="questions" method="post">
             <section class="column">
                 <div class="object">
                     <label for="object1">Name 2 Objects</label>
@@ -131,7 +130,7 @@
             <input type="submit"  id="submit" value="Find out what's my story!">
         </form>
 
-        <article id="madlib"></article>
+        <article id="output"></article>
 
     </main>
 

@@ -58,7 +58,7 @@ input {
 }
 
 /* entire form */
-.parent {
+#questions {
     display: grid;
     /* 3 columns with the width of 1 fractional unit of the website */
     grid-template-columns: repeat(3, 1fr); 
