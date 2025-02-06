@@ -30,52 +30,60 @@
 
         //checks and gives custom error message to each empty form field
         if(object1 == '') {
-            myOutput = 'Please name an object';
+            myOutput = '<span class="warning">!Please name an object!</span>';
             //.focus puts the cursor back into the form field
             document.querySelector('#object1').focus();
         } else if(object2 == '') {
-            myOutput = 'Please name another object';
+            myOutput = '<span class="warning">!Please name another object!</span>';
             document.querySelector('#object2').focus();
         } else if(location == '') {
-            myOutput = 'Please name a location';
+            myOutput = '<span class="warning">!Please name a location!</span>';
             document.querySelector('#location').focus();
         } else if(color1 == '') {
-            myOutput = 'Please name a color';
+            myOutput = '<span class="warning">!Please name a color!</span>';
             document.querySelector('#color1').focus();
         } else if(color2 == '') {
-            myOutput = 'Please name another color';
+            myOutput = '<span class="warning">!Please name another color!</span>';
             document.querySelector('#color2').focus();
         } else if(number == '') {
-            myOutput = 'Please provide a number';
+            myOutput = '<span class="warning">!Please provide a number!</span>';
             document.querySelector('#number').focus();
         } else if(pastTense1 == '') {
-            myOutput = 'Please provide a past tense action verb';
+            myOutput = '<span class="warning">!Please provide a past tense action verb!</span>';
             document.querySelector('#pastTense1').focus();
         } else if(pastTense2 == '') {
-            myOutput = 'Please provide another past tense action verb';
+            myOutput = '<span class="warning">!Please provide another past tense action verb!</span>';
             document.querySelector('#pastTense2').focus();
         } else if(pastTense3 == '') {
-            myOutput = 'Please provide yet another past tense action verb';
+            myOutput = '<span class="warning">!Please provide yet another past tense action verb!</span>';
             document.querySelector('#pastTense3').focus();
         } else if(pastTense4 == '') {
-            myOutput = 'Please provide one more past tense action verb';
+            myOutput = '<span class="warning">!Please provide one more past tense action verb!</span>';
             document.querySelector('#pastTense4').focus();
         } else if(bodyPart == '') {
-            myOutput = 'Please name a body part';
+            myOutput = '<span class="warning">!Please name a body part!</span>';
             document.querySelector('#bodyPart').focus();
         } else if(animal1 == '') {
-            myOutput = 'Please name an animal';
+            myOutput = '<span class="warning">!Please name an animal!</span>';
             document.querySelector('#animal1').focus();
         } else if(animal2 == '') {
-            myOutput = 'Please name another animal';
+            myOutput = '<span class="warning">!Please name another animal!</span>';
             document.querySelector('#animal2').focus();
         } else if(food == '') {
-            myOutput = 'Please provide a food';
+            myOutput = '<span class="warning">!Please provide a food!</span>';
             document.querySelector('#food').focus();
 
         //runs only if all fields are filled in
         } else {
-            myOutput = `One day, I came across a ${object1}-sized ${animal1} in front of me. They were ${color1} and look like they eat ${food} ${number} times a week. They then ${pastTense1} at me in the ${bodyPart} and proceeded to bring put a ${object2} that was glowing ${color2} for some reason. I went closer to try to take a closer look but the creature but a ${animal2} ${pastTense2} in and ${pastTense3} them before I could. Both of them ${pastTense4} away towards the ${location}. What a weird day!`;
+            myOutput = `
+            
+            <p class="storyStyling">One day, I came across a <b>${object1}</b>-sized <b>${animal1}</b> in front of me. </p> 
+            </br>
+            <p class="storyStyling">They were <b>${color1}</b> and look like they eat <b>${food}</b> <b>${number}</b> times a week. They then ${pastTense1}</b> at me in the <b>${bodyPart}</b> and proceeded to bring put a <b>${object2}</b> that was glowing <b>${color2}</b> for some reason.</p> 
+            </br>
+            <p class="storyStyling">I went closer to try to take a closer look but the creature but a <b>${animal2}</b> <b>${pastTense2}</b> in and <b>${pastTense3}</b> them before I could. Both of them <b>${pastTense4}</b> away towards the <b>${location}</b>.</p> 
+            </br>
+            <p class="storyStyling">What a weird day!</p>`;
 
             //resets form fields to blank for another use
             document.querySelector('#object1').value = '';

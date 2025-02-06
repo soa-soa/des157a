@@ -67,15 +67,15 @@ input {
     grid-template-columns: repeat(3, 1fr); 
 }
 
-#output {
-    /* comment in/out to only see output */
-    /* display: block; */
-    /* display: none; */
-    font-size: 2em;
+.storyStyling {
+    font-size: 1.5em;
+    line-height: 1.5;
 }
 
-#warning {
+.warning {
     color: red;
+    font-size: 1em;
+    font-weight: 800;
 }
 
 .object, .color, .bodyPart {
@@ -423,5 +423,4 @@ input {
     bottom: -10%;
     left: 0%;
     background-color: #BEB6DE;
-
 }
