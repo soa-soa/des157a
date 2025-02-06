@@ -59,9 +59,23 @@ input {
 
 /* entire form */
 #questions {
+    /* comment in/out to see only questions */
     display: grid;
+    /* display: none; */
+
     /* 3 columns with the width of 1 fractional unit of the website */
     grid-template-columns: repeat(3, 1fr); 
+}
+
+#output {
+    /* comment in/out to only see output */
+    /* display: block; */
+    /* display: none; */
+    font-size: 2em;
+}
+
+#warning {
+    color: red;
 }
 
 .object, .color, .bodyPart {

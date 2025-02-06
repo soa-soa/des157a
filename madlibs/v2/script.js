@@ -4,6 +4,7 @@
 
     const myOutput = document.querySelector('#output');
     const myQuestions = document.querySelector('#questions');
+    // const myWarning = document.querySelector('#warning');
 
     myQuestions.addEventListener('submit', function(event){
         event.preventDefault();
@@ -25,6 +26,7 @@
         const food = document.querySelector('#food').value;
 
         let myOutput;
+        // let myWarning;
 
         //checks and gives custom error message to each empty form field
         if(object1 == '') {
@@ -35,7 +37,7 @@
             myOutput = 'Please name another object';
             document.querySelector('#object2').focus();
         } else if(location == '') {
-            myOutput = 'Please name yet another object';
+            myOutput = 'Please name a location';
             document.querySelector('#location').focus();
         } else if(color1 == '') {
             myOutput = 'Please name a color';
@@ -65,36 +67,42 @@
             myOutput = 'Please name an animal';
             document.querySelector('#animal1').focus();
         } else if(animal2 == '') {
-            myOutput = 'Please name an animal';
+            myOutput = 'Please name another animal';
             document.querySelector('#animal2').focus();
         } else if(food == '') {
-            myOutput = 'Please provide a verb';
+            myOutput = 'Please provide a food';
             document.querySelector('#food').focus();
+
+        //runs only if all fields are filled in
         } else {
-            myOutput = `One day, I came across a ${object1}-sized ${animal1} in front of me. They were ${color1} and look like they eat ${food} ${number} times a week. They then ${pastTense1} at me in the ${bodyPart} and proceeded to bring put a ${object2} that was glowing ${color2} for some reason. I went closer to try to take a closer look but the creature but a ${animal2} ${pastTense2} in and ${pastTense3} them before I could. Both of them ${pastTense4} away towards the ${location}. What a weird day! `;
+            myOutput = `One day, I came across a ${object1}-sized ${animal1} in front of me. They were ${color1} and look like they eat ${food} ${number} times a week. They then ${pastTense1} at me in the ${bodyPart} and proceeded to bring put a ${object2} that was glowing ${color2} for some reason. I went closer to try to take a closer look but the creature but a ${animal2} ${pastTense2} in and ${pastTense3} them before I could. Both of them ${pastTense4} away towards the ${location}. What a weird day!`;
 
             //resets form fields to blank for another use
-            // document.querySelector('#object1').value = '';
-            // document.querySelector('#object2').value = '';
-            // document.querySelector('#location').value = '';
-            // document.querySelector('#color1').value = '';
-            // document.querySelector('#color2').value = '';
-            // document.querySelector('#number').value = '';
-            // document.querySelector('#pastTense1').value = '';
-            // document.querySelector('#pastTense2').value = '';
-            // document.querySelector('#pastTense3').value = '';
-            // document.querySelector('#pastTense4').value = '';
-            // document.querySelector('#bodyPart').value = '';
-            // document.querySelector('#animal1').value = '';
-            // document.querySelector('#animal2').value = '';
-            // document.querySelector('#food').value = '';
+            document.querySelector('#object1').value = '';
+            document.querySelector('#object2').value = '';
+            document.querySelector('#location').value = '';
+            document.querySelector('#color1').value = '';
+            document.querySelector('#color2').value = '';
+            document.querySelector('#number').value = '';
+            document.querySelector('#pastTense1').value = '';
+            document.querySelector('#pastTense2').value = '';
+            document.querySelector('#pastTense3').value = '';
+            document.querySelector('#pastTense4').value = '';
+            document.querySelector('#bodyPart').value = '';
+            document.querySelector('#animal1').value = '';
+            document.querySelector('#animal2').value = '';
+            document.querySelector('#food').value = '';
+
+            myQuestions.innerHTML = '';
+            // warning.innerHTML = ' ';
+
+            // document.querySelector('warning').innerHTML = "should be empty";
 
         }
 
+        //puts data from form field into the article with the specific id
         output.innerHTML = myOutput;
-        // myQuestions.innerHTML = 'empty';
-
-
+        // warning.innerHTML = myWarning;
         
     });
     
