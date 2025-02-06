@@ -176,6 +176,7 @@ input {
     position: absolute;
     bottom: 8%;
     left: 20%;
+    animation: flipping 0.5s infinite alternate;
 }
 
 .laserbeakOnRavageShadow {
@@ -296,6 +297,11 @@ input {
 @keyframes jumpingShadow2 {
     0% { transform: scale(1); }
     100% { transform: scale(0.5); }
+}
+
+@keyframes flipping {
+    0% { transform: rotateY(180deg); }
+    100% { transform: rotateY(360deg); }
 }
 
 .keyboard {
