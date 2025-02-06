@@ -95,21 +95,24 @@ nav ul li a{
 /* hover animation */
 .animationParent {
     /* background-color: #0e1e61; */
-    height: 140px;
-    width: 140px;
-    transition: all 0.1s ease-in-out;
-}
+    position: absolute;
+    /* height: 25%;
+    width: 25%; */
+    left: 20%;
+    top: 15%;
+    /* transition: all 0.1s ease-in-out; */
 
-.animationChild {
-    /* background-color: red; */
-    height: 150%;
-    width: 150%;
-    transition: transform 1s;
-    transform: translate(400px, 40px);
+    animation: jumping 0.5s infinite alternate;
+
 }
 
 .animationParent:hover .animationChild {
     transform: scale(1.5);
+}
+
+@keyframes jumping {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
 }
 
 /* continuous animation */
