@@ -83,6 +83,10 @@ input {
     
 }
 
+.emptyLabel {
+    padding: 0;
+}
+
 .posterTriangle {
     position: absolute;
     bottom: 90%;
