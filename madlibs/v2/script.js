@@ -79,7 +79,7 @@
             
             <p class="storyStyling">One day, I came across a <b>${object1}</b>-sized <b>${animal1}</b> in front of me. </p> 
             </br>
-            <p class="storyStyling">They were <b>${color1}</b> and look like they eat <b>${food}</b> <b>${number}</b> times a week. They then ${pastTense1}</b> at me in the <b>${bodyPart}</b> and proceeded to bring put a <b>${object2}</b> that was glowing <b>${color2}</b> for some reason.</p> 
+            <p class="storyStyling">They were <b>${color1}</b> and look like they eat <b>${food}</b> <b>${number}</b> times a week. They then <b>${pastTense1}</b> at me in the <b>${bodyPart}</b> and proceeded to bring put a <b>${object2}</b> that was glowing <b>${color2}</b> for some reason.</p> 
             </br>
             <p class="storyStyling">I went closer to try to take a closer look but the creature but a <b>${animal2}</b> <b>${pastTense2}</b> in and <b>${pastTense3}</b> them before I could. Both of them <b>${pastTense4}</b> away towards the <b>${location}</b>.</p> 
             </br>
