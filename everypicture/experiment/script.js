@@ -3,7 +3,7 @@
 
 	const captions = [
 		'',
-		'1.TTTench garpike mooneye halosaur tompot blenny, bluefish, barb, "velvet catfish jellynose fish." <img scr="images/transformers.png>',
+		'1.TTTench garpike mooneye halosaur tompot blenny, bluefish, barb, "velvet catfish jellynose fish." <p><img scr="images/transformers.png></p>',
 		'2. Speckled trout California smoothtongue Alaska blackfish bigscale fish mud cat pike characid, horn shark?',
 		'3. Silver dollar; African glass catfish pearl perch Asiatic glassfish.',
 		'4. Chinook salmon spookfish rudd threadsail, nibbler pikehead sand knifefish buri.',
