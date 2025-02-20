@@ -1,0 +1,16 @@
+h1, h2, h3, p, ul, ol {
+    /* removes default margin/padding from these elements*/
+    margin: 0;
+    padding: 0;
+}
+
+nav img {
+    /* sets images as block elements and makes sure they don't bust out of their containers, and that they maintain their aspect ratio. */
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.orionPax, .soundwave, .sideswipe, .rodimus {
+    position: fixed;
+}
