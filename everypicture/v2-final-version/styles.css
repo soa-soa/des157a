@@ -32,8 +32,8 @@ p {
 	line-height: 1.5em;
 }
 
+/* FOR HOMEPAGE/OVERLAY */
 /* for .hidden and .showing. you CAN NOT animate display, tags but you can animate opacity */
-
 .hidden {
     /* display: none; */
     visibility: hidden;
@@ -60,7 +60,6 @@ p {
 
 .closeButton:hover {
 	background-color: aqua;
-	padding: 0.5 em;
 }
 
 #homePage {
@@ -90,8 +89,6 @@ p {
     transition-timing-function: ease;
 
 	z-index: 1;
-	box-sizing: none;
-
 }
 
 figure {
@@ -272,25 +269,25 @@ figure figcaption{
     left: -239%;
 }
 
-/* rodimus */
+/* rodimus2 */
 .sect13 {
     top: -153%;
     left: -320%;
 }
 
-/* rodimus2 */
+/* rodimus3 */
 .sect14 {
     top: -195%;
     left: -210%;
 }
 
-/* rodimus3 */
+/* rodimus4 */
 .sect15 {
     top: -50%;
     left: -300%;
 }
 
-/* rodimus2 */
+/* rodimus5 */
 .sect15 {
     top: -50%;
     left: -300%;

@@ -6,7 +6,7 @@
 		'',
 		'Welcome! Scroll down to continue.',
 		'',
-		't',
+		'',
 		'',
 		'',
 		'',
