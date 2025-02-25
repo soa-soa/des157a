@@ -1,0 +1,274 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Caveat';
+	font-size: 1.25em;
+	color: #333;
+}
+
+main {
+	width: 30vw;
+	padding: 20px;
+}
+
+section {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding-bottom: 3em;
+}
+
+p {
+	line-height: 1.5em;
+}
+
+/* for .hidden and .showing. you CAN NOT animate display, tags but you can animate opacity */
+
+.hidden {
+    /* display: none; */
+    visibility: hidden;
+    opacity: 0;
+}
+
+.showing {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+}
+
+.closeButton {
+	z-index: 2;
+	font-size: 2em;
+	position: fixed;
+
+	top: 60%;
+	left: 40%;
+	padding: 1em;
+	border-radius: 20px;
+}
+
+.closeButton:hover {
+	background-color: aqua;
+	padding: 0.5 em;
+}
+
+#overlay {
+    /* positions to window bc no parent */
+    position: fixed; 
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+    /* vw = viewport width */
+    width: 100vw;
+    /* vh = viewport height */
+    height: 100vh;
+
+    transition-property: visibility, opacity;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+
+	z-index: 1;
+	box-sizing: none;
+
+}
+
+#overlay article {
+    box-sizing: border-box;
+    background-color: white;
+    padding: 20px;
+    /* 50% of viewport width */
+    width: 50vw;
+    /* 80% of viewport height */
+    height: 80vh;
+    position: absolute;
+
+    /* can use this method or display grid in #overlay */
+    /* group together */
+    top: 50% ;
+    left: 50%;
+    /* moves back to the middle */
+    transform: translate(-50%, -50%);
+
+    /* if the text/content overflows in the y direcion, creates a scroll */
+    overflow-y: scroll;
+}
+
+figure {
+	display: block;
+	margin: 0;
+	width: 70vw;
+	height: 100vh;
+	position: fixed;
+	top:0;
+	right:0;
+	overflow: hidden;
+}
+
+figure img {
+	position: absolute;
+	transition: all 3s ease;
+}
+
+.section1{
+	width: 147vh; /*147% the height of the image is the width ratio*/
+	top:50%;
+	left: 20%;
+	transform:translateX(-50%);
+	
+}
+
+/* for captions */
+figure figcaption{
+	width: 50%;
+	position: absolute;
+	left: 30%;
+	top: 105%;
+	transform: translateX(-50%);
+	background: rgba(255, 255, 255, 0.8);
+	border-radius: 10px;
+	padding: 20px;
+	line-height: 1.5em;
+}
+
+.animate {
+	animation-duration: 700ms;
+	animation-fill-mode: forwards;
+	animation-timing-function: cubic-bezier(0.075, 0.820, 0.165, 1.000);
+}
+
+.enterup {
+	animation-name: enterup;
+	animation-delay: .5s;	
+}
+
+.enterdown {
+	animation-name: enterdown;
+	animation-delay: .5s;
+}
+
+.exitup {
+	animation-name: exitup;
+}
+
+.exitdown {
+	animation-name: exitdown;
+}
+
+/* animations for the onscreen comments? */
+
+@keyframes enterup {
+	0%{
+		top: 105%; 
+	}
+	100% {
+		top: 50%;
+	}
+}
+
+@keyframes enterdown {
+	0%{
+		top: -20%;
+	}
+	100% {
+		top: 50%;
+	}
+}
+
+@keyframes exitup {
+	0%{
+		top: 50%;
+	}
+	100% {
+		top: -20%;
+	}
+}
+
+@keyframes exitdown {
+	0%{
+		top: 50%;
+	}
+	100% {
+		top: 105%;
+	}
+}
+
+.sect2,
+.sect3,
+.sect4,
+.sect5,
+.sect6, 
+.sect7{
+    width: 3600px;
+	padding: 3em;
+}
+
+/* top: closer to 0 = more up, more negative = more down */
+/* left: closer to 0 = more to the left, more negative = more to the right */
+
+/* optimus */
+.sect2 {
+    top: -10%;
+    left: -35%;
+}
+
+/* dPax */
+.sect3 {
+	top: -10%;
+    left: -116%;
+}
+
+/* OP inspired Nails */
+.sect4 {
+	top: -90%;
+    left: -15%;
+}
+
+/* soundwave */
+.sect5 {
+    top: -170%;
+    left: -30%;
+}
+
+/* soundwave2 */
+.sect6 {
+	top: -170%;
+	left: -120%;
+}
+
+/* cassette */
+.sect7 {
+	top: -195%;
+    left: -20%;
+}
+
+/* cassette2 */
+.sect8 {
+	top: -200%;
+    left: -110%;
+}
+
+/* sideswipe */
+.sect9 {
+    top: 0%;
+    left: -229%;
+}
+
+/*  */
+.sect10 {
+    top: -10%;
+    left: -35%;
+    transform: translate(-50%, -50%);
+}
+
+/* rodimus */
+.sect11 {
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
