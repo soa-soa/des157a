@@ -5,12 +5,21 @@
 	const captions = [
 		'',
 		'Welcome! Scroll down to continue.',
-		'tech Section 2: Optimus',
-		'tech Section 3: Soundwave',
-		'tech Section 4: Cassttes ',
-		'tech Section 5: Sideswipe',
-		'tech Section 6: Rodimus',
-		'tech Section 7'];
+		'',
+		't',
+		'',
+		'',
+		'',
+		'',
+		'',
+		'',
+		'',
+		'',
+		'',
+		'',
+		'',
+		'',
+		''];
 
 	let figCaption = document.querySelector('figcaption');
 

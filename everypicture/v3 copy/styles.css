@@ -8,6 +8,13 @@ body {
 	color: #333;
 }
 
+nav img {
+    /* sets images as block elements and makes sure they don't bust out of their containers, and that they maintain their aspect ratio. */
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
 main {
 	width: 30vw;
 	padding: 20px;
@@ -48,6 +55,7 @@ p {
 	left: 40%;
 	padding: 1em;
 	border-radius: 20px;
+
 }
 
 .closeButton:hover {
@@ -55,16 +63,27 @@ p {
 	padding: 0.5 em;
 }
 
+#homePage {
+    /* positions to window bc no parent */
+    position: fixed; 
+
+	width: 100%;
+	height: 100%;
+}
+
 #overlay {
     /* positions to window bc no parent */
     position: fixed; 
     background-color: rgba(0, 0, 0, 0.5);
-    top: 0;
-    left: 0;
+    top: 50%;
+    left: 50%;
+	transform: translate(-50%, -50%);
     /* vw = viewport width */
-    width: 100vw;
+    /* width: 100vw; */
     /* vh = viewport height */
-    height: 100vh;
+    /* height: 100vh; */
+	width: 100%;
+	height: 100%;
 
     transition-property: visibility, opacity;
     transition-duration: 1s;
@@ -73,27 +92,6 @@ p {
 	z-index: 1;
 	box-sizing: none;
 
-}
-
-#overlay article {
-    box-sizing: border-box;
-    background-color: white;
-    padding: 20px;
-    /* 50% of viewport width */
-    width: 50vw;
-    /* 80% of viewport height */
-    height: 80vh;
-    position: absolute;
-
-    /* can use this method or display grid in #overlay */
-    /* group together */
-    top: 50% ;
-    left: 50%;
-    /* moves back to the middle */
-    transform: translate(-50%, -50%);
-
-    /* if the text/content overflows in the y direcion, creates a scroll */
-    overflow-y: scroll;
 }
 
 figure {
@@ -256,19 +254,44 @@ figure figcaption{
     left: -229%;
 }
 
-/*  */
+/* sideswipe2 */
 .sect10 {
-    top: -10%;
-    left: -35%;
-    transform: translate(-50%, -50%);
+    top: 0%;
+    left: -305%;
+}
+
+/* sideswipe3 */
+.sect11 {
+    top: -50%;
+    left: -249%;
+}
+
+/*rodimus*/
+.sect12 {
+    top: -153%;
+    left: -239%;
 }
 
 /* rodimus */
-.sect11 {
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.sect13 {
+    top: -153%;
+    left: -320%;
 }
 
+/* rodimus2 */
+.sect14 {
+    top: -195%;
+    left: -210%;
+}
 
+/* rodimus3 */
+.sect15 {
+    top: -50%;
+    left: -300%;
+}
 
+/* rodimus2 */
+.sect15 {
+    top: -50%;
+    left: -300%;
+}
