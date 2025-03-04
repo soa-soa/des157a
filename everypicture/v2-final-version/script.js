@@ -23,7 +23,7 @@
 
 	let figCaption = document.querySelector('figcaption');
 
-	figCaption.innerHTML = captions[1];
+	// figCaption.innerHTML = captions[1];
 
 	/* Edge case: If the user is down the page and clicks the 
 	browser refresh button for some reason, the page will refresh
@@ -83,15 +83,15 @@
 				}
 
 				// uses the variables set above to set the classes...
-				figCaption.className = exitDirection;
-				figCaption.addEventListener('animationend', function () {
-					let newCaption = document.querySelector('figcaption').cloneNode(true);
-					figCaption.remove();
-					newCaption.className = enterDirection;
-					newCaption.innerHTML = captions[counter];
-					document.querySelector('figure').appendChild(newCaption);
-					figCaption = document.querySelector('figcaption');
-				});
+				// figCaption.className = exitDirection;
+				// figCaption.addEventListener('animationend', function () {
+				// 	let newCaption = document.querySelector('figcaption').cloneNode(true);
+				// 	figCaption.remove();
+				// 	newCaption.className = enterDirection;
+				// 	newCaption.innerHTML = captions[counter];
+				// 	document.querySelector('figure').appendChild(newCaption);
+				// 	figCaption = document.querySelector('figcaption');
+				// });
 
 				prevCounter = counter;
 			}
