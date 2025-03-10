@@ -18,13 +18,32 @@ body {
     line-height: 1.5em;
 }
 
+h1 {
+    padding: 1em;
+}
+
+#gameSection {
+    padding-top: 20px;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
 .imgOverlay {
     width: 100%;
 }
 
 button { 
     background-color: white;
+    border-radius: 8px;
+    padding: 10px;
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+}
 
+button:hover {
+    background-color: #ffb86b;
 }
 
 div {
@@ -69,9 +88,8 @@ h1 {
     text-align: center;
     border-radius: 20px;
 	position: fixed;
-    top: 90%;
-    left: 90%;
-
+    bottom: 5%;
+    right: 5%;
 }
 
 .closeButton:hover {
@@ -95,6 +113,21 @@ h1 {
     transition-timing-function: ease;
 
 	z-index: 2;
+}
+
+.closeButton2 {
+	z-index: 2;
+	font-size: 2em;
+    padding: 0.5em;
+    text-align: center;
+    border-radius: 20px;
+	position: fixed;
+    bottom: 5%;
+    right: 5%;
+}
+
+.closeButton2:hover {
+	background-color: #9393ff;
 }
 
 #overlay2 {

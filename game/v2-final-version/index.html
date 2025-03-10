@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Buy or Not To Buy</title>
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 	<link href="styles.css" rel="stylesheet">
 	<script src="script.js" defer></script>
 </head>
@@ -13,25 +16,29 @@
     <section id="overlay" class="showing">
         <article>
             <!-- <h1>OMG NEW TOY!!</h1> -->
-            <button class="closeButton">Next</button>
+            <button class="closeButton">I NEEEED THIS</button>
             <img class="imgOverlay" src="images/gameDesignV2_newToy copy.jpg" alt="Avatar being star struck at a new Transformers">
         </article>
     </section>
 
     <section id="overlay2" class="showing">
-        <h1>but...I already bought a lot...</h1>
-        <button class="closeButton2">Next</button>
-        <p><img src="images/pensiveEmojiDiscord.png" alt="Avatar being pensive about buying more Transformers"></p>
+        <article>
+            <!-- <h1>but...I aslready bought a lot...</h1> -->
+            <button class="closeButton2">I have to think about it</button>
+            <img class="imgOverlay" src="images/gameDesignV2_pensive copy.jpg" alt="Avatar being pensive about buying more Transformers">
+        </article>
     </section>
 
     <section id="gameSection">
         <h1>To Buy or Not To Buy</h1>
-        <p>There are two players. The player whose turn it is rolls the dice. The total of the roll is added to the current player's score, unless either die comes up as a "one". If this happens, this player's turn is over, and it is the other player's turn. After each roll, the current player can either roll again, (assuming a "one" was not rolled) or if the current player feels that luck is running thin, they can pass to the other player. The first player to get 30 points or higher wins.</p> 
-        <p>If you roll two "ones" (snake eyes), your current score gets zeroed out. So don't do that.</p>
+        <!-- <p>There are two players. The player whose turn it is rolls the dice. The total of the roll is added to the current player's score, unless either die comes up as a "one". If this happens, this player's turn is over, and it is the other player's turn. After each roll, the current player can either roll again, (assuming a "one" was not rolled) or if the current player feels that luck is running thin, they can pass to the other player. The first player to get 30 points or higher wins.</p>  -->
+        <p>You're randomly chosen to be either the Angel or Devil on my shoulders. Click the button to think of arguments against your opponent. Whoever has the most eureka (lightbulbs) convinces me for that round. Whoever wins the most arguments gets to decide if I should buy or not to buy.</p>
+        <p>If one question mark "?" gets rolled, you got lost in the sauce a bit in your argument and your opponent takes over. </p>
+        <p>If two question marks "?" gets rolled, I lost my train of thought and your current score gets zeroed out. </p>
 
         <div id="gamecontrol">
             <h2>Start a Game</h2>
-            <button id="startgame">Randomly Pick the First Player, and Start the Game</button>
+            <button id="startgame">Randomly Pick Sides, and Start the Game</button>
         </div>
 
         <div id="game"></div>
