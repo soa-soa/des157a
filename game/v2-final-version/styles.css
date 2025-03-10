@@ -18,12 +18,21 @@ body {
     line-height: 1.5em;
 }
 
+.imgOverlay {
+    width: 100%;
+}
+
 button { 
-    padding: 10px;
+    background-color: white;
+
 }
 
 div {
     padding: 20px;
+}
+
+h1 {
+    text-align: center;
 }
 
 #gamecontrol, #score {
@@ -41,7 +50,7 @@ div {
 /* FOR HOMEPAGE/OVERLAY */
 /* for .hidden and .showing. you CAN NOT animate display, tags but you can animate opacity */
 .hidden {
-    /* display: none; */
+    display: none;
     visibility: hidden;
     opacity: 0;
 }
@@ -50,17 +59,18 @@ div {
     display: block;
     visibility: visible;
     opacity: 1;
+    /* background-color: pink; */
 }
 
 .closeButton {
 	z-index: 2;
 	font-size: 2em;
+    padding: 0.5em;
+    text-align: center;
+    border-radius: 20px;
 	position: fixed;
-
-	top: 60%;
-	left: 40%;
-	padding: 1em;
-	border-radius: 20px;
+    top: 90%;
+    left: 90%;
 
 }
 
@@ -71,7 +81,8 @@ div {
 #overlay {
     /* positions to window bc no parent */
     position: fixed; 
-    background-color: rgba(255, 255, 255, 1);
+    /* background-color: rgba(255, 255, 255, 1); */
+    background-color: white;
     top: 0;
     left: 0;
     right: 0;
@@ -84,4 +95,23 @@ div {
     transition-timing-function: ease;
 
 	z-index: 2;
+}
+
+#overlay2 {
+    /* positions to window bc no parent */
+    position: fixed; 
+    /* background-color: rgba(255, 255, 255, 1); */
+    background-color: white;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+	width: 100%;
+	height: 100%;
+
+    transition-property: visibility, opacity;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+
+	z-index: 1;
 }
