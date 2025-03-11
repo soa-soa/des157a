@@ -18,14 +18,57 @@ body {
     line-height: 1.5em;
 }
 
-h1 {
+h1, h2 {
+    text-align: center;
     padding: 1em;
+    font-family: 'Lilita One';
+}
+
+p {
+    font-family: 'Montserrat';
+    padding: 0.5em;
+}
+
+#instructions {
+    padding-left: 20%;
+    padding-right: 20%;
+    /* text-align: center; */
+    
+
+}
+
+#court {
+    display: grid;
+    /* 3 columns with the width of 1 fractional unit of the website */
+    grid-template-columns: repeat(3, 1fr); 
+}
+
+#angelPlayer {
+    grid-column: 1;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /* width: 50%; */
+}
+
+#devilPlayer {
+    grid-column: 3;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /* width: 50%; */
+}
+
+#thinkingPlayer {
+    grid-column: 2;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /* width: 50%; */
 }
 
 #gameSection {
     padding-top: 20px;
-    padding-left: 20%;
-    padding-right: 20%;
 }
 
 .imgOverlay {
@@ -47,19 +90,25 @@ button:hover {
 }
 
 div {
-    padding: 20px;
+    /* padding: 20px; */
 }
 
-h1 {
+#gamecontrol {
+    background-color: aliceblue;
     text-align: center;
+    padding-bottom: 1em;
 }
 
-#gamecontrol, #score {
+#gamecontrol h2 {
+    padding-bottom: 1em;
+}
+
+#score {
     background-color: aliceblue;
 }
 
 #game {
-    background-color:#eaeaea;
+    background-color:#ffbfbf;
 }
 
 #actions {
@@ -147,4 +196,8 @@ h1 {
     transition-timing-function: ease;
 
 	z-index: 1;
+}
+
+.closeButtonInstructions {
+    
 }

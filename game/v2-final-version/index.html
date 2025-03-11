@@ -13,7 +13,7 @@
 </head>
 <body>
 
-    <section id="overlay" class="showing">
+    <section id="overlay" class="hidden">
         <article>
             <!-- <h1>OMG NEW TOY!!</h1> -->
             <button class="closeButton">I NEEEED THIS</button>
@@ -21,7 +21,7 @@
         </article>
     </section>
 
-    <section id="overlay2" class="showing">
+    <section id="overlay2" class="hidden">
         <article>
             <!-- <h1>but...I aslready bought a lot...</h1> -->
             <button class="closeButton2">I have to think about it</button>
@@ -29,21 +29,41 @@
         </article>
     </section>
 
-    <section id="gameSection">
+    <section id="instructions" class="showing">
         <h1>To Buy or Not To Buy</h1>
-        <!-- <p>There are two players. The player whose turn it is rolls the dice. The total of the roll is added to the current player's score, unless either die comes up as a "one". If this happens, this player's turn is over, and it is the other player's turn. After each roll, the current player can either roll again, (assuming a "one" was not rolled) or if the current player feels that luck is running thin, they can pass to the other player. The first player to get 30 points or higher wins.</p>  -->
-        <p>You're randomly chosen to be either the Angel or Devil on my shoulders. Click the button to think of arguments against your opponent. Whoever has the most eureka (lightbulbs) convinces me for that round. Whoever wins the most arguments gets to decide if I should buy or not to buy.</p>
+        <!-- <p>You're randomly chosen to be either the Angel or Devil on my shoulders. Click the button to think of arguments against your opponent. Whoever has the most eureka (lightbulbs) convinces me for that round. Whoever wins the most arguments gets to decide if I should buy or not to buy.</p>
         <p>If one question mark "?" gets rolled, you got lost in the sauce a bit in your argument and your opponent takes over. </p>
-        <p>If two question marks "?" gets rolled, I lost my train of thought and your current score gets zeroed out. </p>
+        <p>If two question marks "?" gets rolled, I lost my train of thought and your current score gets zeroed out. </p> -->
+        <p>Think of arguments against your opponent! Whoever has the most eureka (lightbulbs) convinces me for that round. Whoever wins the most arguments gets to decide if I should buy or not to buy. Careful not to get confused!</p>
 
-        <div id="gamecontrol">
-            <h2>Start a Game</h2>
-            <button id="startgame">Randomly Pick Sides, and Start the Game</button>
-        </div>
+        <button class="closeButtonInstructions">Close Intructions</button>
 
-        <div id="game"></div>
+    </section>
+
+    <section id="gamecontrol">
+        <button id="startgame">Start!</button>
+    </section>
+
+    <section id="gameSection">
+        
         <div id="actions"></div>
         <div id="score"></div>
     </section>
+
+
+
+    <section id="court">
+
+            <img id="angelPlayer" src="images/drawnAngelEmoji.png" alt="angel player" width="50%">
+            <img id="devilPlayer" src="images/drawnDevilEmoji.png" alt="devil player" width="50%">
+            <div id="game"></div>
+
+            <div id="thinkingPlayer">
+                <img src="images/drawnThinkEmoji.png" alt="thinking player" width="100%">
+            </div>
+
+
+    </section>
+
 </body>
 </html>

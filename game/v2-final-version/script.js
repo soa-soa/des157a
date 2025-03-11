@@ -15,6 +15,7 @@
 	const game = document.getElementById('game');
 	const score = document.getElementById('score');
 	const actionArea = document.getElementById('actions');
+	const thinkingPlayer = document.getElementById('thinkingPLayer');
 
 	const gameData = {
 		dice: ['images/1questionMark.png', 'images/2lightbulb.png', 'images/3lightbulb.png', 
@@ -23,6 +24,8 @@
 		score: [0, 0],
 		roll1: 0,
 		roll2: 0,
+		roll3: 0,
+		roll4: 0,
 		rollSum: 0,
 		index: 0,
 		gameEnd: 29,
@@ -37,8 +40,10 @@
 		gameData.index = Math.round(Math.random());
 		console.log(gameData.index);
 
-		gameControl.innerHTML = '<h2>The Game Has Started</h2>';
-		gameControl.innerHTML += '<button id="quit">Quit making me think</button>';
+		// setUpTurn();
+
+		// gameControl.innerHTML = '<h2>The Argument Has Started</h2>';
+		gameControl.innerHTML = '<button id="quit">Quit making me think</button>';
 
 		document
 			.getElementById('quit').addEventListener('click', function () {
@@ -62,19 +67,26 @@
 		actionArea.innerHTML = '';
 		gameData.roll1 = Math.floor(Math.random() * 3) + 1; //using ceil could result in a zero
 		gameData.roll2 = Math.floor(Math.random() * 3) + 1;
+		// gameData.roll3 = Math.floor(Math.random() * 3) + 1; //using ceil could result in a zero
+		// gameData.roll4 = Math.floor(Math.random() * 3) + 1;
+
 		game.innerHTML = `<p>${gameData.players[gameData.index]} is thinking</p>`;
 		game.innerHTML += `<img src="${gameData.dice[gameData.roll1-1]}"> 
 							<img src="${gameData.dice[gameData.roll2-1]}">`;
+		// game.innerHTML += `<img src="${gameData.dice[gameData.roll3-1]}"> 
+		// 					<img src="${gameData.dice[gameData.roll4-1]}">`;
 		gameData.rollSum = gameData.roll1 + gameData.roll2;
 		// gameData.rollSumEnemy = gameData.roll3 + gameData.roll4;
 
+		console.log(`Dice 1: ${gameData.roll1}. Dice 2: ${gameData.roll2}`);
+
 		// if two 1's are rolled, scores are reset, I get confused
 		if( gameData.rollSum === 2 ){ 
-			game.innerHTML += '<p>Oh snap! Snake eyes!</p>';
-			gameData.score[gameData.index] = 0;
-			gameData.index ? (gameData.index = 0) : (gameData.index = 1);
+			game.innerHTML += '<p>Uh oh...I feel so confused...What was the argument again?</p>';
+			gameData.score[gameData.index] = 0; //resets score to 0
+			gameData.index ? (gameData.index = 0) : (gameData.index = 1); //switches player
 			showCurrentScore();
-			setTimeout(setUpTurn, 3000);
+			setTimeout(setUpTurn, 3500);
 		}
 
 		// if either die is a 1, switches player, player gets confused
@@ -83,8 +95,10 @@
 			game.innerHTML += `<p>You rolled a ? and got a bit confused :( switching to  ${
 				gameData.players[gameData.index]
 			}</p>`;
-			setTimeout(setUpTurn, 3000);
+			setTimeout(setUpTurn, 3500);
 		}
+
+		
 
 		// if neither die is a 1...
 		else { 
@@ -106,13 +120,26 @@
 
 	}
 
+	// function checkWinningCondition() {
+	// 	if (gameData.score[gameData.index] > gameData.gameEnd) {
+	// 		score.innerHTML = `<h2>${gameData.players[gameData.index]} 
+	// 		wins this round with ${gameData.score[gameData.index]} points!</h2>`;
+
+	// 		actionArea.innerHTML = '';
+	// 		document.getElementById('quit').innerHTML = 'Start a New Game?';
+	// 	} else {
+	// 		// shows current score...
+	// 		showCurrentScore();
+	// 	}
+	// }
+
 	function checkWinningCondition() {
 		if (gameData.score[gameData.index] > gameData.gameEnd) {
 			score.innerHTML = `<h2>${gameData.players[gameData.index]} 
 			wins this round with ${gameData.score[gameData.index]} points!</h2>`;
 
 			actionArea.innerHTML = '';
-			document.getElementById('quit').innerHTML = 'Start a New Game?';
+			document.getElementById('quit').innerHTML = 'Start a New Argument?';
 		} else {
 			// shows current score...
 			showCurrentScore();
@@ -120,11 +147,8 @@
 	}
 
 	function showCurrentScore() {
-		// score.innerHTML = `<p>The score is currently <strong>${gameData.players[0]}
-		// ${gameData.score[0]}</strong> and <strong>${gameData.players[1]} 
-		// ${gameData.score[1]}</strong></p>`;
-		score.innerHTML = `<p><strong>${gameData.players[0]}</strong> won <strong>${gameData.score[0]}</strong> arguments and <strong>${gameData.players[1]}</strong> won 
-		<strong>${gameData.score[1]}</strong> arguments.</p>`;
+		score.innerHTML = `<p><strong>${gameData.players[0]}</strong> won <strong>${gameData.score[0]}</strong> persuasion points and <strong>${gameData.players[1]}</strong> won 
+		<strong>${gameData.score[1]}</strong> persuasion points.</p>`;
 	}
 
 	//exits overlay when clicking close button
@@ -134,12 +158,18 @@
 		console.log('clicked close button')
     });
 
-		//exits overlay when clicking close button
-		document.querySelector('.closeButton2').addEventListener('click', function(event){
-			event.preventDefault();
-			document.querySelector('#overlay2').className = 'hidden';
-			console.log('clicked close button 2')
-		});
+	//exits overlay when clicking close button
+	document.querySelector('.closeButton2').addEventListener('click', function(event){
+		event.preventDefault();
+		document.querySelector('#overlay2').className = 'hidden';
+		console.log('clicked close button 2')
+	});
+
+	document.querySelector('.closeButtonInstructions').addEventListener('click', function(event){
+        event.preventDefault();
+        document.querySelector('#instructions').className = 'hidden';
+		console.log('clicked close button for instructions')
+    });
 	
 
     // //allows user to exit the overlay when pressing escape key
