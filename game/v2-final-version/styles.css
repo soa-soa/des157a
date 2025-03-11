@@ -89,10 +89,6 @@ button:hover {
     background-color: #ffb86b;
 }
 
-div {
-    /* padding: 20px; */
-}
-
 #gamecontrol {
     background-color: aliceblue;
     text-align: center;
@@ -103,17 +99,17 @@ div {
     padding-bottom: 1em;
 }
 
-#score {
+/* #score {
     background-color: aliceblue;
-}
+} */
 
-#game {
+/* #game {
     background-color:#ffbfbf;
-}
+} */
 
-#actions {
+/* #actions {
     background-color: silver;
-}
+} */
 
 /* FOR HOMEPAGE/OVERLAY */
 /* for .hidden and .showing. you CAN NOT animate display, tags but you can animate opacity */
@@ -196,8 +192,4 @@ div {
     transition-timing-function: ease;
 
 	z-index: 1;
-}
-
-.closeButtonInstructions {
-    
 }

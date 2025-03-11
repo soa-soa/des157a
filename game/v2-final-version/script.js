@@ -16,6 +16,8 @@
 	const score = document.getElementById('score');
 	const actionArea = document.getElementById('actions');
 	const thinkingPlayer = document.getElementById('thinkingPLayer');
+	const dialogue = document.getElementById('dialogue');
+	const devilArea = document.getElementById('devilArea');
 
 	const gameData = {
 		dice: ['images/1questionMark.png', 'images/2lightbulb.png', 'images/3lightbulb.png', 
@@ -24,17 +26,26 @@
 		score: [0, 0],
 		roll1: 0,
 		roll2: 0,
-		roll3: 0,
-		roll4: 0,
+		// roll3: 0,
+		// roll4: 0,
 		rollSum: 0,
 		index: 0,
 		gameEnd: 29,
 
 		rollSumEnemy: 0,
 
-		round:0,
-		roundEnd:11,
+		// round:0,
+		// roundEnd:11,
+
+		angelDialogue: ['What about your wallet?', 'You can still love Soundwave moderately', 'angel argument 3', 'angel argument 4', 'angel argument 5', 'angel argument6'],
+		devilDialogue: ['Money is temporary. Transformers are eternal', 'FOMO', 'devil argument 3', 'devil argument 4', 'devil argument 5', 'devil argument6'],
+		dialogueRoll: 0,
+		dialogueIndex: 0,
 	};
+
+	// const dialogueData = {
+	// 	angelDialogue: ['What about your wallet?', 'You can still love Soundwave moderately', 'argument 3', 'argument 4', 'argument 5', 'argument6'],
+	// };
 
 	startGame.addEventListener('click', function () {
 		gameData.index = Math.round(Math.random());
@@ -67,27 +78,50 @@
 		actionArea.innerHTML = '';
 		gameData.roll1 = Math.floor(Math.random() * 3) + 1; //using ceil could result in a zero
 		gameData.roll2 = Math.floor(Math.random() * 3) + 1;
+		gameData.dialogueRoll = Math.floor(Math.random() * 6) + 1; //using ceil could result in a zero
+
 		// gameData.roll3 = Math.floor(Math.random() * 3) + 1; //using ceil could result in a zero
 		// gameData.roll4 = Math.floor(Math.random() * 3) + 1;
 
 		game.innerHTML = `<p>${gameData.players[gameData.index]} is thinking</p>`;
-		game.innerHTML += `<img src="${gameData.dice[gameData.roll1-1]}"> 
-							<img src="${gameData.dice[gameData.roll2-1]}">`;
+		game.innerHTML += `<img src="${gameData.dice[gameData.roll1-1]}"> `;
+		devilArea.innerHTML += `<img src="${gameData.dice[gameData.roll2-1]}"> `;
 		// game.innerHTML += `<img src="${gameData.dice[gameData.roll3-1]}"> 
 		// 					<img src="${gameData.dice[gameData.roll4-1]}">`;
 		gameData.rollSum = gameData.roll1 + gameData.roll2;
 		// gameData.rollSumEnemy = gameData.roll3 + gameData.roll4;
 
 		console.log(`Dice 1: ${gameData.roll1}. Dice 2: ${gameData.roll2}`);
+		console.log(`Dialogue dice rolled a ${gameData.dialogueRoll}`);
+		// dialogue.innerHTML = `<p>${gameData.angelDialogue[gameData.dialogueRoll-1]}</p>`;
+
+		//I want to make it so that the side that it got switched to also triggers their respective dialogue choices...
+		dialogue.innerHTML = `<p>${gameData.angelDialogue[gameData.dialogueRoll-1]}</p>`;
+
+		// ${gameData.players[gameData.index]}
 
 		// if two 1's are rolled, scores are reset, I get confused
-		if( gameData.rollSum === 2 ){ 
-			game.innerHTML += '<p>Uh oh...I feel so confused...What was the argument again?</p>';
-			gameData.score[gameData.index] = 0; //resets score to 0
-			gameData.index ? (gameData.index = 0) : (gameData.index = 1); //switches player
+		// if( gameData.rollSum === 2 ){ //triggers only if the dice sum equals to 2
+		// 	game.innerHTML += '<p>Uh oh...I feel so confused...What was the argument again?</p>';
+		// 	gameData.score[gameData.index] = 0; //resets score to 0
+		// 	gameData.index ? (gameData.index = 0) : (gameData.index = 1); //switches player
+		// 	showCurrentScore();
+		// 	setTimeout(setUpTurn, 3500);
+		// }
+
+		if(gameData.roll1 > gameData.roll2){
+			game.innerHTML += '<p>Angel wins this round!</p>';
 			showCurrentScore();
 			setTimeout(setUpTurn, 3500);
 		}
+
+		//NOTE FIND A WAY TO RESET MESSAGES
+		else if(gameData.roll2 > gameData.roll1){
+			devilArea.innerHTML += '<p>Devil wins this round!</p>';
+			showCurrentScore();
+			setTimeout(setUpTurn, 3500);
+		}
+
 
 		// if either die is a 1, switches player, player gets confused
 		else if(gameData.roll1 === 1 || gameData.roll2 === 1){ 
@@ -95,6 +129,9 @@
 			game.innerHTML += `<p>You rolled a ? and got a bit confused :( switching to  ${
 				gameData.players[gameData.index]
 			}</p>`;
+
+			// gameData.dialogueIndex ? (gameData.dialogueIndex = 0) : (gameData.dialogueIndex = 1); //switches diague options????
+			// dialogue.innerHTML = `<p>${gameData.devilDialogue[gameData.dialogueRoll-1]}</p>`;
 			setTimeout(setUpTurn, 3500);
 		}
 
