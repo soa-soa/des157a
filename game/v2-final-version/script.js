@@ -12,30 +12,29 @@
 	
 	const startGame = document.getElementById('startgame');
 	const gameControl = document.getElementById('gamecontrol');
-	const game = document.getElementById('game');
+	
 	const score = document.getElementById('score');
 	const actionArea = document.getElementById('actions');
 	const thinkingPlayer = document.getElementById('thinkingPLayer');
 	const dialogue = document.getElementById('dialogue');
-	const devilArea = document.getElementById('devilArea');
+	const angelRoll = document.getElementById('angelRoll'); //game gets changed into angelArea
+	const devilRoll = document.getElementById('devilRoll');
+	const angelScore = document.getElementById('angelScore');
+	const devilScore = document.getElementById('devilScore');
 
 	const gameData = {
-		dice: ['images/1questionMark.png', 'images/2lightbulb.png', 'images/3lightbulb.png', 
+		dice: ['images/1questionMark.png', 'images/1lightbulb.png', 'images/2lightbulb.png', 'images/3lightbulb.png', 
 			   'images/4die.jpg', 'images/5die.jpg', 'images/6die.jpg'],
 		players: ['Angel ^_^', 'Devil >:)'],
 		score: [0, 0],
 		roll1: 0,
 		roll2: 0,
-		// roll3: 0,
-		// roll4: 0,
+
 		rollSum: 0,
 		index: 0,
 		gameEnd: 29,
 
 		rollSumEnemy: 0,
-
-		// round:0,
-		// roundEnd:11,
 
 		angelDialogue: ['What about your wallet?', 'You can still love Soundwave moderately', 'angel argument 3', 'angel argument 4', 'angel argument 5', 'angel argument6'],
 		devilDialogue: ['Money is temporary. Transformers are eternal', 'FOMO', 'devil argument 3', 'devil argument 4', 'devil argument 5', 'devil argument6'],
@@ -54,7 +53,7 @@
 		// setUpTurn();
 
 		// gameControl.innerHTML = '<h2>The Argument Has Started</h2>';
-		gameControl.innerHTML = '<button id="quit">Quit making me think</button>';
+		gameControl.innerHTML = '<button id="quit">Quit Game</button>';
 
 		document
 			.getElementById('quit').addEventListener('click', function () {
@@ -65,7 +64,7 @@
 	});
 
 	function setUpTurn() {
-		game.innerHTML = `<p>Thinking as the ${gameData.players[gameData.index]}</p>`;
+		// dialogue.innerHTML = `<p>Thinking as the ${gameData.players[gameData.index]}</p>`;
 		actionArea.innerHTML = '<button id="roll">Think</button>';
 		document.getElementById('roll').addEventListener('click', function(){
 
@@ -75,64 +74,62 @@
 	}
 
 	function throwDice(){
-		actionArea.innerHTML = '';
-		gameData.roll1 = Math.floor(Math.random() * 3) + 1; //using ceil could result in a zero
-		gameData.roll2 = Math.floor(Math.random() * 3) + 1;
+		actionArea.innerHTML = ''; //makes roll button disappear
+		gameData.roll1 = Math.floor(Math.random() * 4) + 1; //using ceil could result in a zero
+		gameData.roll2 = Math.floor(Math.random() * 4) + 1;
+
+		//rolls a random dialogue option when a side wins
 		gameData.dialogueRoll = Math.floor(Math.random() * 6) + 1; //using ceil could result in a zero
 
-		// gameData.roll3 = Math.floor(Math.random() * 3) + 1; //using ceil could result in a zero
-		// gameData.roll4 = Math.floor(Math.random() * 3) + 1;
+		//shows whose turn it is
+		// dialogue.innerHTML = `<p>${gameData.players[gameData.index]} is thinking</p>`;
+		
+		//updates page with lightbulb images
+		angelRoll.innerHTML += `<img src="${gameData.devilDialogue[gameData.roll1-1]}"> `;
+		console.log(`image changes to ${gameData.dice[gameData.roll1-1]}`);
+		devilRoll.innerHTML += `<img src="${gameData.dice[gameData.roll2-1]}"> `;
 
-		game.innerHTML = `<p>${gameData.players[gameData.index]} is thinking</p>`;
-		game.innerHTML += `<img src="${gameData.dice[gameData.roll1-1]}"> `;
-		devilArea.innerHTML += `<img src="${gameData.dice[gameData.roll2-1]}"> `;
-		// game.innerHTML += `<img src="${gameData.dice[gameData.roll3-1]}"> 
-		// 					<img src="${gameData.dice[gameData.roll4-1]}">`;
 		gameData.rollSum = gameData.roll1 + gameData.roll2;
-		// gameData.rollSumEnemy = gameData.roll3 + gameData.roll4;
 
-		console.log(`Dice 1: ${gameData.roll1}. Dice 2: ${gameData.roll2}`);
-		console.log(`Dialogue dice rolled a ${gameData.dialogueRoll}`);
-		// dialogue.innerHTML = `<p>${gameData.angelDialogue[gameData.dialogueRoll-1]}</p>`;
+		console.log(`angelDice: ${gameData.roll1}. devilDice: ${gameData.roll2}`);
+		console.log(`Dialogue dice:${gameData.dialogueRoll}, ${gameData.angelDialogue[gameData.dialogueRoll-1]}`);
 
-		//I want to make it so that the side that it got switched to also triggers their respective dialogue choices...
-		dialogue.innerHTML = `<p>${gameData.angelDialogue[gameData.dialogueRoll-1]}</p>`;
-
-		// ${gameData.players[gameData.index]}
-
-		// if two 1's are rolled, scores are reset, I get confused
-		// if( gameData.rollSum === 2 ){ //triggers only if the dice sum equals to 2
-		// 	game.innerHTML += '<p>Uh oh...I feel so confused...What was the argument again?</p>';
-		// 	gameData.score[gameData.index] = 0; //resets score to 0
-		// 	gameData.index ? (gameData.index = 0) : (gameData.index = 1); //switches player
-		// 	showCurrentScore();
-		// 	setTimeout(setUpTurn, 3500);
-		// }
-
+		
+		//if angelRoll value is greater than devilRoll
 		if(gameData.roll1 > gameData.roll2){
-			game.innerHTML += '<p>Angel wins this round!</p>';
+			dialogue.innerHTML = '<p>Angel wins this round!</p>';
+			//I want to make it so that the side that it got switched to also triggers their respective dialogue choices...
+			dialogue.innerHTML += `<p>${gameData.angelDialogue[gameData.dialogueRoll-1]}</p>`;
 			showCurrentScore();
-			setTimeout(setUpTurn, 3500);
+			setTimeout(setUpTurn, 3000);
+			console.log('angel rolls higher value')
 		}
 
 		//NOTE FIND A WAY TO RESET MESSAGES
 		else if(gameData.roll2 > gameData.roll1){
-			devilArea.innerHTML += '<p>Devil wins this round!</p>';
+			dialogue.innerHTML = '<p>Devil wins this round!</p>';
+			dialogue.innerHTML += `<p>${gameData.devilDialogue[gameData.dialogueRoll-1]}</p>`;
 			showCurrentScore();
-			setTimeout(setUpTurn, 3500);
+			setTimeout(setUpTurn, 3000);
+			console.log('devil rolls higher value')
+		}
+
+		else if (gameData.roll1 == gameData.roll2){
+			dialogue.innerHTML = '<p>Both sides tied!</p>';
+			showCurrentScore();
+			setTimeout(setUpTurn, 3000);
+			console.log('Theres a tie')
 		}
 
 
-		// if either die is a 1, switches player, player gets confused
+		// if either rolled a 1, switches player, player gets confused
 		else if(gameData.roll1 === 1 || gameData.roll2 === 1){ 
 			gameData.index ? (gameData.index = 0) : (gameData.index = 1); //switches players
-			game.innerHTML += `<p>You rolled a ? and got a bit confused :( switching to  ${
+			dialogue.innerHTML += `<p>You rolled a ? and got a bit confused :( switching to ${
 				gameData.players[gameData.index]
 			}</p>`;
 
-			// gameData.dialogueIndex ? (gameData.dialogueIndex = 0) : (gameData.dialogueIndex = 1); //switches diague options????
-			// dialogue.innerHTML = `<p>${gameData.devilDialogue[gameData.dialogueRoll-1]}</p>`;
-			setTimeout(setUpTurn, 3500);
+			setTimeout(setUpTurn, 3000);
 		}
 
 		
@@ -157,19 +154,6 @@
 
 	}
 
-	// function checkWinningCondition() {
-	// 	if (gameData.score[gameData.index] > gameData.gameEnd) {
-	// 		score.innerHTML = `<h2>${gameData.players[gameData.index]} 
-	// 		wins this round with ${gameData.score[gameData.index]} points!</h2>`;
-
-	// 		actionArea.innerHTML = '';
-	// 		document.getElementById('quit').innerHTML = 'Start a New Game?';
-	// 	} else {
-	// 		// shows current score...
-	// 		showCurrentScore();
-	// 	}
-	// }
-
 	function checkWinningCondition() {
 		if (gameData.score[gameData.index] > gameData.gameEnd) {
 			score.innerHTML = `<h2>${gameData.players[gameData.index]} 
@@ -184,8 +168,9 @@
 	}
 
 	function showCurrentScore() {
-		score.innerHTML = `<p><strong>${gameData.players[0]}</strong> won <strong>${gameData.score[0]}</strong> persuasion points and <strong>${gameData.players[1]}</strong> won 
-		<strong>${gameData.score[1]}</strong> persuasion points.</p>`;
+		angelRoll.innerHTML = `<p><strong>${gameData.players[0]}</strong> won <strong>${gameData.roll1}</strong> persuasion points</p>`; 
+		devilRoll.innerHTML = `<p><strong>${gameData.players[1]}</strong> won 
+		<strong>${gameData.roll2}</strong> persuasion points.</p>`;
 	}
 
 	//exits overlay when clicking close button
@@ -205,15 +190,16 @@
 	document.querySelector('.closeButtonInstructions').addEventListener('click', function(event){
         event.preventDefault();
         document.querySelector('#instructions').className = 'hidden';
-		console.log('clicked close button for instructions')
+		document.querySelector('#openButtonInstructions').className = 'showing';
+		console.log('closed instructions')
     });
-	
 
-    // //allows user to exit the overlay when pressing escape key
-    // document.addEventListener('keydown', function(event){
-    //     if (event.key == 'Escape') {
-    //         document.querySelector('#overlay').className = 'hidden';
-    //     }
-    // });
+
+	document.querySelector('#openButtonInstructions').addEventListener('click', function(event){
+        event.preventDefault();
+        document.querySelector('#instructions').className = 'showing';
+		document.querySelector('#openButtonInstructions').className = 'hidden';
+		console.log('opened instructions')
+    });
 
 }());

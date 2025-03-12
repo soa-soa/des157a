@@ -29,14 +29,19 @@
         </article>
     </section>
 
-    <section id="instructions" class="showing">
+    <section>
         <h1>To Buy or Not To Buy</h1>
-        <!-- <p>You're randomly chosen to be either the Angel or Devil on my shoulders. Click the button to think of arguments against your opponent. Whoever has the most eureka (lightbulbs) convinces me for that round. Whoever wins the most arguments gets to decide if I should buy or not to buy.</p>
-        <p>If one question mark "?" gets rolled, you got lost in the sauce a bit in your argument and your opponent takes over. </p>
-        <p>If two question marks "?" gets rolled, I lost my train of thought and your current score gets zeroed out. </p> -->
-        <p>Think of arguments against your opponent! Whoever has the most eureka (lightbulbs) convinces me for that round. Whoever wins the most arguments gets to decide if I should buy or not to buy. Careful not to get confused!</p>
-
-        <button class="closeButtonInstructions">Close Intructions</button>
+        
+        <div id="instructions" class="hidden"> 
+            <p>Think of arguments against your opponent! Whoever has the most eureka (lightbulbs) convinces me for that round. Whoever wins the most arguments gets to decide if I should buy or not to buy. Careful not to get confused!</p>
+            <p><img src="images/1questionMark.png" height="50px"> = 0 eurekas. You automatically lose the round</p>
+            <p><img src="images/1questionMark.png" height="50px"><img src="images/1questionMark.png" height="50px"> = Your score resets to 0</p>
+            <p><img src="images/1lightbulb.png" height="50px"> = 1 eureka</p>
+            <p><img src="images/2lightbulb.png" height="50px"> = 2 eurekas</p>
+            <p><img src="images/3lightbulb.png" height="50px"> = 3 eurekas</p>
+            <button class="closeButtonInstructions">Close Instructions</button>
+        </div> 
+        <button id="openButtonInstructions" class="hidden">Open Intructions</button>
 
     </section>
 
@@ -54,15 +59,28 @@
 
     <section id="court">
 
+        <!-- covers angel avatar -->
+        <div id="angelArea">
             <img id="angelPlayer" src="images/drawnAngelEmoji.png" alt="angel player" width="50%">
-            <div id="dialogue"></div>
-            <img id="devilPlayer" src="images/drawnDevilEmoji.png" alt="devil player" width="50%">
-            <div id="game"></div>
+        </div>
 
-            <!-- <div id="thinkingPlayer"> -->
-                <img id="thinkingPlayer" src="images/drawnThinkEmoji.png" alt="thinking player" width="100%">
-            <!-- </div> -->
-            <div id="devilArea"></div>
+        <!-- aka announcements -->
+        <div id="dialogue"></div>
+
+        <!-- covers devel avatar -->
+        <div id="devilArea">
+            <img id="devilPlayer" src="images/drawnDevilEmoji.png" alt="devil player" width="50%">
+        </div>
+
+        <!-- where angel's score goes -->
+        <div id="angelRoll"></div> 
+
+        <div id="thinkerArea">
+            <img id="thinkingPlayer" src="images/drawnThinkEmoji.png" alt="thinker" width="100%">
+        </div>
+
+        <!-- where devil's score goes -->
+        <div id="devilRoll"></div>
 
 
     </section>
