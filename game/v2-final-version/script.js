@@ -17,10 +17,48 @@
 	const actionArea = document.getElementById('actions');
 	const thinkingPlayer = document.getElementById('thinkingPLayer');
 	const dialogue = document.getElementById('dialogue');
-	const angelRoll = document.getElementById('angelRoll'); //game gets changed into angelArea
+	const angelRoll = document.getElementById('angelRoll');
 	const devilRoll = document.getElementById('devilRoll');
 	const angelTotalScore = document.getElementById('angelTotalScore');
 	const devilTotalScore = document.getElementById('devilTotalScore');
+
+	//audio
+	//background music
+	const bkgButton = document.querySelector('#bgm'); //play
+	const muteButton = document.querySelector('#muteButton'); //pauses
+	const bgmAudio = new Audio('audio/8-bit-loop-189494.mp3');
+
+	bkgButton.addEventListener('mousedown', function() {
+		bgmAudio.play();
+		bgmAudio.volume = 0.2;
+		bgmAudio.loop = true;
+		console.log('playing BGM');
+	});
+
+	muteButton.addEventListener('mousedown', function() {
+		bgmAudio.pause();
+		console.log('pausing BGM');
+	});
+
+	//angel audio
+	const angelSFXButton = document.querySelector('#angelSFX');
+	const angelSFX = new Audio('audio/8bitHighBlast.mp3');
+
+	angelSFXButton.addEventListener('mousedown', function() {
+		angelSFX.play();
+		angelSFX.volume = 0.2;
+		console.log('played angel SFX');
+	});
+
+	//devil audio
+	const devilSFXButton = document.querySelector('#devilSFX');
+	const devilSFX = new Audio('audio/8bitLowBlast.mp3');
+
+	devilSFXButton.addEventListener('mousedown', function() {
+		devilSFX.play();
+		devilSFX.volume = 0.2;
+		console.log('played angel SFX');
+	});
 
 	const gameData = {
 		dice: ['images/1questionMark.png', 'images/1lightbulb.png', 'images/2lightbulb.png', 'images/3lightbulb.png', 
@@ -109,6 +147,10 @@
 			console.log('angel rolls higher value')
 			console.log(`should be angel score ${gameData.score[0]}`);
 
+			angelSFX.play();
+			angelSFX.volume = 0.2;
+			console.log('played angel SFX');
+
 			checkWinningCondition();
 		}
 
@@ -120,6 +162,12 @@
 			showCurrentScore();
 			setTimeout(setUpTurn, 2000);
 			console.log('devil rolls higher value')
+
+			devilSFX.play();
+			devilSFX.volume = 0.2;
+			console.log('played angel SFX');
+
+			checkWinningCondition();
 
 		}
 

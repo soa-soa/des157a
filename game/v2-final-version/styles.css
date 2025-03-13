@@ -69,7 +69,8 @@ p {
 }
 
 #gameSection {
-    padding-top: 20px;
+    padding-top: 1em;
+    text-align: center;
 }
 
 .imgOverlay {
@@ -91,9 +92,9 @@ button:hover {
 }
 
 #gamecontrol {
-    background-color: aliceblue;
+    /* background-color: aliceblue; */
     text-align: center;
-    padding-bottom: 1em;
+    /* padding-bottom: 1em; */
 }
 
 #gamecontrol h2 {

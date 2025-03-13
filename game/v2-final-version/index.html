@@ -13,15 +13,15 @@
 </head>
 <body>
 
-    <section id="overlay" class="hidden">
+    <section id="overlay" class="showing">
         <article>
             <!-- <h1>OMG NEW TOY!!</h1> -->
-            <button class="closeButton">I NEEEED THIS</button>
+            <button id="bgm" class="closeButton">I NEEEED THIS</button>
             <img class="imgOverlay" src="images/gameDesignV2_newToy copy.jpg" alt="Avatar being star struck at a new Transformers">
         </article>
     </section>
 
-    <section id="overlay2" class="hidden">
+    <section id="overlay2" class="showing">
         <article>
             <!-- <h1>but...I aslready bought a lot...</h1> -->
             <button class="closeButton2">I have to think about it</button>
@@ -31,8 +31,9 @@
 
     <section>
         <h1>To Buy or Not To Buy</h1>
-        
-        <div id="instructions" class="hidden"> 
+        <button id="muteButton">Mute BGM</button>
+
+        <div id="instructions" class="showing"> 
             <p>Think of arguments against your opponent! Whoever has the most eureka (lightbulbs) convinces me for that round. Whoever wins the most arguments gets to decide if I should buy or not to buy. Careful not to get confused!</p>
             <p><img src="images/1questionMark.png" height="50px"> = 0 eurekas. You automatically lose the round</p>
             <p><img src="images/1questionMark.png" height="50px"><img src="images/1questionMark.png" height="50px"> = Your score resets to 0</p>
@@ -54,6 +55,9 @@
         <div id="actions"></div>
         <div id="score"></div>
     </section>
+
+    <button id="angelSFX">Testing Angel SFX</button>
+    <button id="devilSFX">Testing Devil SFX</button>
 
 
 
