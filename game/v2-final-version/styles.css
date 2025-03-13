@@ -215,3 +215,18 @@ button:hover {
 
 	z-index: 1;
 }
+
+/* ANIMATION */
+
+@keyframes jumping {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
+
+#angelPlayer {
+    animation: jumping 0.5s infinite alternate;
+}
+
+#devilPlayer {
+    animation: jumping 0.5s infinite alternate;
+}

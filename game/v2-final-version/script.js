@@ -15,12 +15,14 @@
 	
 	const score = document.getElementById('score');
 	const actionArea = document.getElementById('actions');
-	const thinkingPlayer = document.getElementById('thinkingPLayer');
+	const thinker = document.getElementById('thinker');
 	const dialogue = document.getElementById('dialogue');
 	const angelRoll = document.getElementById('angelRoll');
 	const devilRoll = document.getElementById('devilRoll');
 	const angelTotalScore = document.getElementById('angelTotalScore');
 	const devilTotalScore = document.getElementById('devilTotalScore');
+	const angelArea = document.querySelector('#angelArea');
+	const devilArea = document.querySelector('#devilArea');
 
 	const gameData = {
 		dice: ['images/1questionMark.png', 'images/1lightbulb.png', 'images/2lightbulb.png', 'images/3lightbulb.png', 
@@ -35,7 +37,7 @@
 		devilRollSum: 0,
 
 		index: 0,
-		gameEnd: 10,
+		gameEnd: 20,
 
 
 		angelDialogue: ['What about your wallet?', 'You can still love Soundwave moderately', 'angel argument 3', 'angel argument 4', 'angel argument 5', 'angel argument6'],
@@ -61,7 +63,7 @@
 		console.log('playing BGM');
 	});
 
-	muteButton.addEventListener('mousedown', function() {
+	muteButton.addEventListener('mousedown', function() { 
 		bgmAudio.pause();
 		console.log('pausing BGM');
 	});
@@ -70,9 +72,9 @@
 	const angelSFXButton = document.querySelector('#angelSFX');
 	const angelSFX = new Audio('audio/8bitHighBlast.mp3');
 
-	angelSFXButton.addEventListener('mousedown', function() {
-		angelAudio();
-	});
+	// angelSFXButton.addEventListener('mousedown', function() { //for testing
+	// 	angelAudio();
+	// });
 
 	function angelAudio() {
 		angelSFX.play();
@@ -84,9 +86,9 @@
 	const devilSFXButton = document.querySelector('#devilSFX');
 	const devilSFX = new Audio('audio/bit-bubbles-82769.mp3');
 
-	devilSFXButton.addEventListener('mousedown', function() {
-		devilAudio();
-	});
+	// devilSFXButton.addEventListener('mousedown', function() { //for testing
+	// 	devilAudio();
+	// });
 
 	function devilAudio() {
 		devilSFX.play();
@@ -98,9 +100,9 @@
 	const tieSFXButton = document.querySelector('#tieSFX');
 	const tieSFX = new Audio('audio/videogame-death-sound-43894.mp3');
 
-	tieSFXButton.addEventListener('mousedown', function() {
-		tieAudio();
-	});
+	// tieSFXButton.addEventListener('mousedown', function() { //for testing
+	// 	tieAudio();
+	// });
 
 	function tieAudio() {
 		tieSFX.play();
@@ -112,9 +114,9 @@
 	const victorySFXButton = document.querySelector('#victorySFX');
 	const victorySFX = new Audio('audio/8bit-sample-69080.mp3');
 
-	victorySFXButton.addEventListener('mousedown', function() {
-		victoryAudio();
-	});
+	// victorySFXButton.addEventListener('mousedown', function() {
+	// 	victoryAudio();
+	// });
 
 	function victoryAudio() {
 		bgmAudio.pause();
@@ -176,10 +178,15 @@
 		//if angelRoll value is greater than devilRoll
 		//if angel rolls a higher value than devil
 		if (gameData.roll1 > gameData.roll2){
-			dialogue.innerHTML = '<p>Angel wins this round!</p>';
+			dialogue.innerHTML = '<p><strong>Angel</strong> wins this round!</p>';
 			//I want to make it so that the side that it got switched to also triggers their respective dialogue choices...
 			dialogue.innerHTML += `<p>${gameData.angelDialogue[gameData.dialogueRoll-1]}</p>`;
-			// showCurrentScore();
+
+			//changes emoji images
+			angelArea.innerHTML = `<img id="angelPlayer" src="images/drawnAngelTalkEmoji.png" alt="angel player" width="50%">`;
+			devilArea.innerHTML = `<img id="devilPlayer" src="images/drawnDevilSadEmoji.png" alt="devil player" width="50%">`;
+
+
 			setTimeout(setUpTurn, 2000);
 			console.log('angel rolls higher value')
 			console.log(`should be angel score ${gameData.score[0]}`);
@@ -188,18 +195,18 @@
 			checkWinningCondition();
 		}
 
-		//NOTE FIND A WAY TO RESET MESSAGES
 		//if devil rolls a higher value than angel
 		else if (gameData.roll2 > gameData.roll1){
-			dialogue.innerHTML = '<p>Devil wins this round!</p>';
+			dialogue.innerHTML = '<p><strong>Devil<strong> wins this round!</p>';
 			dialogue.innerHTML += `<p>${gameData.devilDialogue[gameData.dialogueRoll-1]}</p>`;
 			showCurrentScore();
+
+			//changes emoji images
+			angelArea.innerHTML = `<img id="angelPlayer" src="images/drawnAngelSadEmoji.png" alt="angel player" width="50%">`;
+			devilArea.innerHTML = `<img id="devilPlayer" src="images/drawnDevilTalkEmoji.png" alt="devil player" width="50%">`;
+
 			setTimeout(setUpTurn, 2000);
 			console.log('devil rolls higher value')
-
-			devilSFX.play();
-			devilSFX.volume = 0.2;
-			console.log('played devil SFX');
 
 			devilAudio();
 			checkWinningCondition();
@@ -210,12 +217,14 @@
 		else if (gameData.roll1 == gameData.roll2){
 			dialogue.innerHTML = '<p>Both sides tied!</p>';
 			showCurrentScore();
+
+			//changes emoji images
+			angelArea.innerHTML = `<img id="angelPlayer" src="images/drawnAngelEmoji.png" alt="angel player" width="50%">`;
+			devilArea.innerHTML = `<img id="devilPlayer" src="images/drawnDevilEmoji.png" alt="devil player" width="50%">`;
+
+
 			setTimeout(setUpTurn, 2000);
 			console.log('Theres a tie')
-
-			tieSFX.play();
-			tieSFX.volume = 0.5;
-			console.log('played tie SFX');
 
 			tieAudio();
 			checkWinningCondition();
