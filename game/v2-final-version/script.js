@@ -19,8 +19,8 @@
 	const dialogue = document.getElementById('dialogue');
 	const angelRoll = document.getElementById('angelRoll'); //game gets changed into angelArea
 	const devilRoll = document.getElementById('devilRoll');
-	const angelScore = document.getElementById('angelScore');
-	const devilScore = document.getElementById('devilScore');
+	const angelTotalScore = document.getElementById('angelTotalScore');
+	const devilTotalScore = document.getElementById('devilTotalScore');
 
 	const gameData = {
 		dice: ['images/1questionMark.png', 'images/1lightbulb.png', 'images/2lightbulb.png', 'images/3lightbulb.png', 
@@ -30,11 +30,13 @@
 		roll1: 0,
 		roll2: 0,
 
-		rollSum: 0,
-		index: 0,
-		gameEnd: 29,
+		totalScore:[0,0],
+		angelRollSum: 0,
+		devilRollSum: 0,
 
-		rollSumEnemy: 0,
+		index: 0,
+		gameEnd: 10,
+
 
 		angelDialogue: ['What about your wallet?', 'You can still love Soundwave moderately', 'angel argument 3', 'angel argument 4', 'angel argument 5', 'angel argument6'],
 		devilDialogue: ['Money is temporary. Transformers are eternal', 'FOMO', 'devil argument 3', 'devil argument 4', 'devil argument 5', 'devil argument6'],
@@ -84,10 +86,11 @@
 		//shows whose turn it is
 		// dialogue.innerHTML = `<p>${gameData.players[gameData.index]} is thinking</p>`;
 		
-		//updates page with lightbulb images
-		angelRoll.innerHTML += `<img src="${gameData.devilDialogue[gameData.roll1-1]}"> `;
-		console.log(`image changes to ${gameData.dice[gameData.roll1-1]}`);
+		//updates page with lightbulb images???
+		angelRoll.innerHTML += `<img src="${gameData.dice[gameData.roll1-1]}"> `;
+		console.log(`angel image changes to ${gameData.dice[gameData.roll1-1]}`);
 		devilRoll.innerHTML += `<img src="${gameData.dice[gameData.roll2-1]}"> `;
+		console.log(`devil image changes to ${gameData.dice[gameData.roll2-1]}`);
 
 		gameData.rollSum = gameData.roll1 + gameData.roll2;
 
@@ -96,29 +99,37 @@
 
 		
 		//if angelRoll value is greater than devilRoll
-		if(gameData.roll1 > gameData.roll2){
+		//if angel rolls a higher value than devil
+		if (gameData.roll1 > gameData.roll2){
 			dialogue.innerHTML = '<p>Angel wins this round!</p>';
 			//I want to make it so that the side that it got switched to also triggers their respective dialogue choices...
 			dialogue.innerHTML += `<p>${gameData.angelDialogue[gameData.dialogueRoll-1]}</p>`;
-			showCurrentScore();
-			setTimeout(setUpTurn, 3000);
+			// showCurrentScore();
+			setTimeout(setUpTurn, 2000);
 			console.log('angel rolls higher value')
+			console.log(`should be angel score ${gameData.score[0]}`);
+
+			checkWinningCondition();
 		}
 
 		//NOTE FIND A WAY TO RESET MESSAGES
-		else if(gameData.roll2 > gameData.roll1){
+		//if devil rolls a higher value than angel
+		else if (gameData.roll2 > gameData.roll1){
 			dialogue.innerHTML = '<p>Devil wins this round!</p>';
 			dialogue.innerHTML += `<p>${gameData.devilDialogue[gameData.dialogueRoll-1]}</p>`;
 			showCurrentScore();
-			setTimeout(setUpTurn, 3000);
+			setTimeout(setUpTurn, 2000);
 			console.log('devil rolls higher value')
+
 		}
 
+		//if they both tie
 		else if (gameData.roll1 == gameData.roll2){
 			dialogue.innerHTML = '<p>Both sides tied!</p>';
 			showCurrentScore();
-			setTimeout(setUpTurn, 3000);
+			setTimeout(setUpTurn, 2000);
 			console.log('Theres a tie')
+
 		}
 
 
@@ -134,8 +145,9 @@
 
 		
 
-		// if neither die is a 1...
+		// if neither die is a 1...continue playing as normal
 		else { 
+			//(in that particular index (player 1 or 2, add score to that side)
 			gameData.score[gameData.index] = gameData.score[gameData.index] + gameData.rollSum;
 			actionArea.innerHTML = '<button id="rollagain">Think again</button> or <button id="pass">Pass</button>';
 
@@ -155,22 +167,52 @@
 	}
 
 	function checkWinningCondition() {
-		if (gameData.score[gameData.index] > gameData.gameEnd) {
-			score.innerHTML = `<h2>${gameData.players[gameData.index]} 
-			wins this round with ${gameData.score[gameData.index]} points!</h2>`;
+		//will win only if their score reaches a past a score threshold
+		//angel win condition
+		if (gameData.totalScore[0] > gameData.gameEnd) {
+			score.innerHTML = `<h2>${gameData.players[0]} 
+			wins this round with ${gameData.totalScore[0]} points!</h2>`;
 
 			actionArea.innerHTML = '';
 			document.getElementById('quit').innerHTML = 'Start a New Argument?';
-		} else {
+			console.log(`Angel wins game with ${gameData.totalScore[0]} points`);
+		} 
+
+		//devil win condition
+		else if (gameData.totalScore[1] > gameData.gameEnd) {
+			score.innerHTML = `<h2>${gameData.players[1]} 
+			wins this round with ${gameData.totalScore[1]} points!</h2>`;
+
+			actionArea.innerHTML = '';
+			document.getElementById('quit').innerHTML = 'Start a New Argument?';
+			console.log(`Devil wins game with ${gameData.totalScore[1]} points`);
+		} 
+		
+		else {
 			// shows current score...
 			showCurrentScore();
 		}
 	}
 
 	function showCurrentScore() {
+		//angel score for each round
 		angelRoll.innerHTML = `<p><strong>${gameData.players[0]}</strong> won <strong>${gameData.roll1}</strong> persuasion points</p>`; 
+
+		//angel total score for entire game
+		gameData.totalScore[0] = gameData.totalScore[0] + gameData.roll1;
+		angelRoll.innerHTML += `<p>Angel's Total Score: <strong>${gameData.totalScore[0]}</strong><p>`;
+		console.log(`Angel Total Score: ${gameData.totalScore[0]}`);
+		console.log('testing if this doubles')
+		
+		//devil score for each round
 		devilRoll.innerHTML = `<p><strong>${gameData.players[1]}</strong> won 
 		<strong>${gameData.roll2}</strong> persuasion points.</p>`;
+
+		//devil total score for entire game
+		gameData.totalScore[1] = gameData.totalScore[1] + gameData.roll2;
+		devilRoll.innerHTML += `<p>Devil's Total Score: <strong>${gameData.totalScore[1]}</strong><p>`;
+		console.log(`Devil Total Score: ${gameData.totalScore[1]}`);
+
 	}
 
 	//exits overlay when clicking close button
