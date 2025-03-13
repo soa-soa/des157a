@@ -22,44 +22,6 @@
 	const angelTotalScore = document.getElementById('angelTotalScore');
 	const devilTotalScore = document.getElementById('devilTotalScore');
 
-	//audio
-	//background music
-	const bkgButton = document.querySelector('#bgm'); //play
-	const muteButton = document.querySelector('#muteButton'); //pauses
-	const bgmAudio = new Audio('audio/8-bit-loop-189494.mp3');
-
-	bkgButton.addEventListener('mousedown', function() {
-		bgmAudio.play();
-		bgmAudio.volume = 0.2;
-		bgmAudio.loop = true;
-		console.log('playing BGM');
-	});
-
-	muteButton.addEventListener('mousedown', function() {
-		bgmAudio.pause();
-		console.log('pausing BGM');
-	});
-
-	//angel audio
-	const angelSFXButton = document.querySelector('#angelSFX');
-	const angelSFX = new Audio('audio/8bitHighBlast.mp3');
-
-	angelSFXButton.addEventListener('mousedown', function() {
-		angelSFX.play();
-		angelSFX.volume = 0.2;
-		console.log('played angel SFX');
-	});
-
-	//devil audio
-	const devilSFXButton = document.querySelector('#devilSFX');
-	const devilSFX = new Audio('audio/8bitLowBlast.mp3');
-
-	devilSFXButton.addEventListener('mousedown', function() {
-		devilSFX.play();
-		devilSFX.volume = 0.2;
-		console.log('played angel SFX');
-	});
-
 	const gameData = {
 		dice: ['images/1questionMark.png', 'images/1lightbulb.png', 'images/2lightbulb.png', 'images/3lightbulb.png', 
 			   'images/4die.jpg', 'images/5die.jpg', 'images/6die.jpg'],
@@ -85,6 +47,81 @@
 	// const dialogueData = {
 	// 	angelDialogue: ['What about your wallet?', 'You can still love Soundwave moderately', 'argument 3', 'argument 4', 'argument 5', 'argument6'],
 	// };
+
+	//AUDIO
+	//background music
+	const bkgButton = document.querySelector('#bgm'); //play
+	const muteButton = document.querySelector('#muteButton'); //pauses
+	const bgmAudio = new Audio('audio/8-bit-loop-189494.mp3');
+
+	bkgButton.addEventListener('mousedown', function() {
+		bgmAudio.play();
+		bgmAudio.volume = 0.2;
+		bgmAudio.loop = true;
+		console.log('playing BGM');
+	});
+
+	muteButton.addEventListener('mousedown', function() {
+		bgmAudio.pause();
+		console.log('pausing BGM');
+	});
+
+	//angel audio
+	const angelSFXButton = document.querySelector('#angelSFX');
+	const angelSFX = new Audio('audio/8bitHighBlast.mp3');
+
+	angelSFXButton.addEventListener('mousedown', function() {
+		angelAudio();
+	});
+
+	function angelAudio() {
+		angelSFX.play();
+		angelSFX.volume = 0.2;
+		console.log('played angel SFX');
+	}
+
+	//devil audio
+	const devilSFXButton = document.querySelector('#devilSFX');
+	const devilSFX = new Audio('audio/bit-bubbles-82769.mp3');
+
+	devilSFXButton.addEventListener('mousedown', function() {
+		devilAudio();
+	});
+
+	function devilAudio() {
+		devilSFX.play();
+		devilSFX.volume = 0.5;
+		console.log('played devil SFX');
+	}
+
+	//tie audio, played when both rolls are equal
+	const tieSFXButton = document.querySelector('#tieSFX');
+	const tieSFX = new Audio('audio/videogame-death-sound-43894.mp3');
+
+	tieSFXButton.addEventListener('mousedown', function() {
+		tieAudio();
+	});
+
+	function tieAudio() {
+		tieSFX.play();
+		tieSFX.volume = 0.5;
+		console.log('played tie SFX');
+	}
+
+	//victory audio
+	const victorySFXButton = document.querySelector('#victorySFX');
+	const victorySFX = new Audio('audio/8bit-sample-69080.mp3');
+
+	victorySFXButton.addEventListener('mousedown', function() {
+		victoryAudio();
+	});
+
+	function victoryAudio() {
+		bgmAudio.pause();
+		victorySFX.play();
+		victorySFX.volume = 0.5;
+		console.log('played victory SFX');
+	}
 
 	startGame.addEventListener('click', function () {
 		gameData.index = Math.round(Math.random());
@@ -147,10 +184,7 @@
 			console.log('angel rolls higher value')
 			console.log(`should be angel score ${gameData.score[0]}`);
 
-			angelSFX.play();
-			angelSFX.volume = 0.2;
-			console.log('played angel SFX');
-
+			angelAudio();
 			checkWinningCondition();
 		}
 
@@ -165,8 +199,9 @@
 
 			devilSFX.play();
 			devilSFX.volume = 0.2;
-			console.log('played angel SFX');
+			console.log('played devil SFX');
 
+			devilAudio();
 			checkWinningCondition();
 
 		}
@@ -177,6 +212,13 @@
 			showCurrentScore();
 			setTimeout(setUpTurn, 2000);
 			console.log('Theres a tie')
+
+			tieSFX.play();
+			tieSFX.volume = 0.5;
+			console.log('played tie SFX');
+
+			tieAudio();
+			checkWinningCondition();
 
 		}
 
@@ -224,6 +266,8 @@
 			actionArea.innerHTML = '';
 			document.getElementById('quit').innerHTML = 'Start a New Argument?';
 			console.log(`Angel wins game with ${gameData.totalScore[0]} points`);
+			
+			victoryAudio();
 		} 
 
 		//devil win condition
@@ -234,6 +278,8 @@
 			actionArea.innerHTML = '';
 			document.getElementById('quit').innerHTML = 'Start a New Argument?';
 			console.log(`Devil wins game with ${gameData.totalScore[1]} points`);
+
+			victoryAudio();
 		} 
 		
 		else {
@@ -267,14 +313,14 @@
     document.querySelector('.closeButton').addEventListener('click', function(event){
         event.preventDefault();
         document.querySelector('#overlay').className = 'hidden';
-		console.log('clicked close button')
+		console.log('closed overlay 1')
     });
 
 	//exits overlay when clicking close button
 	document.querySelector('.closeButton2').addEventListener('click', function(event){
 		event.preventDefault();
 		document.querySelector('#overlay2').className = 'hidden';
-		console.log('clicked close button 2')
+		console.log('closed overlay 2')
 	});
 
 	document.querySelector('.closeButtonInstructions').addEventListener('click', function(event){
