@@ -130,6 +130,40 @@ button:hover {
     /* background-color: pink; */
 }
 
+.closeButton0 {
+	z-index: 2;
+	font-size: 2em;
+    padding: 0.5em;
+    text-align: center;
+    border-radius: 20px;
+	position: fixed;
+    bottom: 5%;
+    right: 5%;
+}
+
+.closeButton0:hover {
+	background-color: rgb(255, 247, 0);
+}
+
+#startScreen {
+    /* positions to window bc no parent */
+    position: fixed; 
+    /* background-color: rgba(255, 255, 255, 1); */
+    background-color: white;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+	width: 100%;
+	height: 100%;
+
+    transition-property: visibility, opacity;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+
+	z-index: 3;
+}
+
 .closeButton {
 	z-index: 2;
 	font-size: 2em;

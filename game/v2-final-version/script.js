@@ -319,6 +319,13 @@
 	}
 
 	//exits overlay when clicking close button
+    document.querySelector('.closeButton0').addEventListener('click', function(event){
+        event.preventDefault();
+        document.querySelector('#startScreen').className = 'hidden';
+		console.log('closed overlay 0')
+    });
+
+	//exits overlay when clicking close button
     document.querySelector('.closeButton').addEventListener('click', function(event){
         event.preventDefault();
         document.querySelector('#overlay').className = 'hidden';
