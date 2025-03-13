@@ -119,7 +119,7 @@ button:hover {
     display: none;
     visibility: hidden;
     opacity: 0;
-    background-color: none ;
+    background-color: transparent ;
 
 }
 
@@ -225,8 +225,14 @@ button:hover {
 
 #angelPlayer {
     animation: jumping 0.5s infinite alternate;
+    width: 50%;
 }
 
 #devilPlayer {
     animation: jumping 0.5s infinite alternate;
+    width: 50%;
+}
+
+#thinker {
+    width: 100%;
 }
